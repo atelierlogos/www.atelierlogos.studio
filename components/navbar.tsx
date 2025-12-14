@@ -4,7 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Settings, BookOpen, Briefcase, Mail, PhoneCallIcon } from "lucide-react"
+import { NavigationMenuItems } from "@/components/navigation-menu"
+import { Menu, X, PhoneCallIcon } from "lucide-react"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,17 +28,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
-            Features
-          </Link>
-          <Link href="/#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-            How It Works
-          </Link>
-          <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
-            Blog
-          </Link>
-        </nav>
+        <NavigationMenuItems className="hidden md:flex" />
 
         <div className="hidden md:flex items-center gap-3">
           <Button
@@ -63,40 +54,7 @@ export function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background/95 backdrop-blur">
           <div className="container py-4">
-            <nav className="space-y-3">
-              <Link
-                href="/#features"
-                className="flex items-center gap-3 py-2 text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Briefcase size={16} />
-                Features
-              </Link>
-              <Link
-                href="/#how-it-works"
-                className="flex items-center gap-3 py-2 text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Settings size={16} />
-                How It Works
-              </Link>
-              <Link
-                href="/blog"
-                className="flex items-center gap-3 py-2 text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <BookOpen size={16} />
-                Blog
-              </Link>
-              <Link
-                href="https://cal.com/team/atelierlogos/general-sessions"
-                className="flex items-center gap-3 py-2 text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Mail size={16} />
-                Schedule a 45-min Chat
-              </Link>
-            </nav>
+            <NavigationMenuItems variant="mobile" onNavigate={() => setIsMenuOpen(false)} />
 
             <div className="pt-4 mt-4 border-t border-border/50 space-y-2">
               <Button

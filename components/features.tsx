@@ -10,10 +10,10 @@ export function Features() {
               <Sparkles className="mr-2 h-4 w-4" />
               The Magic
             </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-               Let the vibe-coders play in the kiddie-pool{" "}
+            <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-5xl">
+               Still vibe-coding? Isn't it {" "}
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-black">
-                while we tackle real complexity.
+                time to get serious?
               </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
