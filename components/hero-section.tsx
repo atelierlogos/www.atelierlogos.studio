@@ -98,14 +98,17 @@ export function HeroSection() {
         }}
       />
 
-      <div className="container relative z-10 px-4 md:px-8 max-w-6xl mx-auto text-center space-y-12">
-        <div className="inline-block rounded-xl bg-muted/70 backdrop-blur-sm px-6 py-4 text-sm md:text-base text-foreground/80 font-medium italic border border-border/40 shadow-md leading-snug font-serif">
-          <span className="font-semibold text-foreground">Atelier</span> (atelier) – a workshop or studio where artists work. |{" "}
-          <span className="font-semibold text-foreground">Logos</span> (λόγος) – the act of speaking, discourse, or reasoned thought.
+      <div className="container relative z-10 px-4 md:px-8 max-w-6xl mx-auto text-center space-y-10 md:space-y-12">
+        <div className="relative inline-flex overflow-hidden rounded-2xl border border-border/30 bg-white/95 px-4 py-2.5 text-[0.65rem] sm:text-xs md:text-sm text-foreground/75 font-medium italic shadow-lg shadow-black/5 font-serif backdrop-blur">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(147,197,253,0.25),transparent_60%)] opacity-70" />
+          <div className="relative z-10">
+            <span className="font-semibold text-foreground">Atelier</span> (atelier) – a workshop or studio where artists work. |{" "}
+            <span className="font-semibold text-foreground">Logos</span> (λόγος) – the act of speaking, discourse, or reasoned thought.
+          </div>
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-5xl mx-auto">
-          Still vibe-coding? Isn't it time to get serious?
+          Still vibe-coding? It's time to grow up anon...
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">

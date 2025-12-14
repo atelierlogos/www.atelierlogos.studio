@@ -15,24 +15,24 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Atelier Logos | LLM Solutions Studio" as const,
-  description: "We are a bespoke software studio helping clients build scalable, testable, and beautiful software while adopting LLMs in a sane manner." as const,
+  title: "Atelier Logos | Spec-driven Solutions" as const,
+  description: "Still vibe coding? It's time to grow up anon" as const,
   generator: 'v0.dev',
 
   keywords: ['LLM', 'AI', 'Software Development', 'Bespoke Solutions', 'Machine Learning'],
   authors: [{ name: 'Atelier Logos' }],
   creator: 'Atelier Logos',
   openGraph: {
-    title: "Atelier Logos | LLM Solutions Studio",
-    description: "We are a bespoke software studio helping clients build scalable, testable, and beautiful software while adopting LLMs in a sane manner.",
+    title: "Atelier Logos | Spec-driven Solutions",
+    description: "Still vibe coding? It's time to grow up anon",
     url: "https://www.www.atelierlogos.studio",
     siteName: "Atelier Logos",
     images: [
       {
         url: "https://www.www.atelierlogos.studio/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Atelier Logos - LLM Solutions Studio"
+        width: 2910,
+        height: 1540,
+        alt: "Atelier Logos - Spec-driven Solutions",
       }
     ],
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
-    description: "We are a bespoke software studio helping clients build scalable, testable, and beautiful software while adopting LLMs in a sane manner.",
+    description: "Still vibe coding? It's time to grow up anon",
     images: ["https://www.www.atelierlogos.studio/og-image.png"]
   },
   robots: {
@@ -68,10 +68,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
       <head>
+        <meta name="description" content={description} />
+        <link rel="canonical" href="https://www.www.atelierlogos.studio" />
         <title>{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://www.www.atelierlogos.studio/og-image.png" />
+        <meta property="og:image:width" content="2910" />
+        <meta property="og:image:height" content="1540" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.www.atelierlogos.studio" />
 
