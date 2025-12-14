@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Atelier Logos | Spec-driven Solutions",
     description: "Still vibe coding? It's time to grow up anon",
-    url: "https://www.www.atelierlogos.studio",
+    url: "https://www.atelierlogos.studio",
     siteName: "Atelier Logos",
     images: [
       {
-        url: "https://www.www.atelierlogos.studio/og-image.png",
+        url: "https://www.atelierlogos.studio/og-image.png",
         width: 2910,
         height: 1540,
         alt: "Atelier Logos - Spec-driven Solutions",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
     description: "Still vibe coding? It's time to grow up anon",
-    images: ["https://www.www.atelierlogos.studio/og-image.png"]
+    images: ["https://www.atelierlogos.studio/og-image.png"]
   },
   robots: {
     index: true,
@@ -69,17 +69,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
       <head>
         <meta name="description" content={description} />
-        <link rel="canonical" href="https://www.www.atelierlogos.studio" />
+        <link rel="canonical" href="https://www.atelierlogos.studio" />
         <title>{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://www.www.atelierlogos.studio/og-image.png" />
+        <meta property="og:image" content="https://www.atelierlogos.studio/og-image.png" />
         <meta property="og:image:width" content="2910" />
         <meta property="og:image:height" content="1540" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.www.atelierlogos.studio" />
+        <meta property="og:url" content="https://www.atelierlogos.studio" />
 
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />

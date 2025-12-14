@@ -160,7 +160,7 @@ PUSHER_CLUSTER=your_pusher_cluster
 
 ## 📞 Support
 
-- 📧 Support: [Create an account](https://www.www.atelierlogos.studio/onboarding) and chat with us
+- 📧 Support: [Create an account](https://www.atelierlogos.studio/onboarding) and chat with us
 - 💬 Schedule a Call: Available on the homepage
 
 ---
