@@ -1,9 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { useToast } from "@/components/ui/use-toast"
 import { useState, FormEvent } from "react"
+import { PhoneInput } from "@/components/ui/phone-input"
+import { CheckCircle } from "lucide-react"
 
 declare global {
   interface Window {
@@ -38,6 +41,52 @@ const currentProjects = [
 
 export function HeroSection() {
   const { toast } = useToast()
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [hasSignedUp, setHasSignedUp] = useState(false)
+
+  const handleNewsletterSignup = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    if (!email.trim()) {
+      toast({
+        title: "Email required",
+        description: "Let us know where to send updates.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      window.posthog?.capture("newsletter_signup", {
+        email,
+        phone,
+        source: "hero_section",
+      })
+
+      toast({
+        title: "You're on the list",
+        description: "We will send thoughtful builds when the dust clears.",
+      })
+
+      setEmail("")
+      setPhone("")
+      setHasSignedUp(true)
+    } catch (error) {
+      console.error("Failed to track newsletter signup", error)
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't record your signup. Please try again.",
+        variant: "destructive",
+      })
+      setHasSignedUp(false)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section className="relative overflow-hidden py-24 md:py-32 bg-white font-sans">
@@ -63,21 +112,60 @@ export function HeroSection() {
           We use spec-driven methodology to build robust, scalable applications that don't sacrifice on any front as both a product studio and consultancy.
         </p>
 
-        <div className="max-w-4xl w-full mx-auto py-0">
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:items-center">
-            <Button
-              onClick={() => window.location.href = '/monthly-retainer'}
-              className="h-12 px-8 text-base font-semibold rounded-lg text-white shadow-lg hover:shadow-xl bg-black hover:bg-primary transition-all duration-200 flex-1 sm:flex-none"
-            >
-              Our Premium Monthly Retainer
-            </Button>
-            <Button
-              onClick={() => window.location.href = 'mailto:james@atelierlogos.studio'}
-              className="h-12 px-8 text-base font-semibold rounded-lg border-2 border-black text-black bg-white hover:bg-black hover:text-white transition-all duration-200 flex-1 sm:flex-none"
-            >
-              Get In Touch
-            </Button>
-          </div>
+        <div className="max-w-3xl mx-auto w-full">
+          <form
+            onSubmit={handleNewsletterSignup}
+            className="rounded-2xl border border-border/50 bg-white/80 p-5 shadow-xl shadow-muted-foreground/30 backdrop-blur-md"
+          >
+            <div className="space-y-1 text-center">
+              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Stay in the loop</p>
+              <h3 className="text-2xl font-semibold text-foreground">Hear about internal projects and customer builds</h3>
+              <p className="text-muted-foreground">
+                We share thoughtful notes on our workflow, learnings, and launches about once a month.
+              </p>
+            </div>
+
+            <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_1.4fr]">
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                placeholder="Email address"
+                onChange={(event) => {
+                  setEmail(event.target.value)
+                  setHasSignedUp(false)
+                }}
+                required
+              />
+              <PhoneInput
+                value={phone}
+                onChange={(value) => {
+                  setPhone(value || "")
+                  setHasSignedUp(false)
+                }}
+                defaultCountry="US"
+                placeholder="+1 555 123 4567"
+                international
+                className="w-full"
+              />
+            </div>
+
+            <div className="mt-3 flex justify-center">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full max-w-xs"
+              >
+                {isSubmitting ? "Joining…" : hasSignedUp ? "You're in!" : "Join the list"}
+              </Button>
+            </div>
+            {hasSignedUp && (
+              <div className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-emerald-400/70 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+                <CheckCircle className="h-4 w-4" />
+                You're on the list—watch your inbox for updates.
+              </div>
+            )}
+          </form>
         </div>
 
         <div className="pt-20 border-t border-border/30 max-w-5xl mx-auto">
