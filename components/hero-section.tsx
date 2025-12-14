@@ -105,11 +105,11 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-5xl mx-auto">
-          Speaking products into existence from spec to scale.
+          Still vibe-coding? Isn't it time to get serious?
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-          We use spec-driven methodology to build robust, scalable applications that don't sacrifice on any front as both a product studio and consultancy.
+          Meet the spec-driven solution studio that uses rigorous planning and LLM-assistance to build robust, scalable applications for mission-critical use cases.
         </p>
 
         <div className="max-w-3xl mx-auto w-full">

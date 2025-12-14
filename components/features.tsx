@@ -11,9 +11,9 @@ export function Features() {
               The Magic
             </div>
             <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-5xl">
-               Still vibe-coding? Isn't it {" "}
+               Spearking solutions into {" "}
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-black">
-                time to get serious?
+                 existence from spec to scale.
               </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
