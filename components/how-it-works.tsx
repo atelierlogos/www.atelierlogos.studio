@@ -4,8 +4,6 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import Cal, { getCalApi } from '@calcom/embed-react'
-import { useAnalytics } from '@/hooks/use-analytics'
 
 interface BlogPost {
   id: string
@@ -28,10 +26,8 @@ interface ProjectCardProps {
 
 export function HowItWorks() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
-  const [loading, setLoading] = useState(false)
   const [blogLoading, setBlogLoading] = useState(true)
   const router = useRouter()
-  const analytics = useAnalytics()
   // Sign-up form state
   const [step, setStep] = useState<'form' | 'checkEmail'>('form')
   const [userData, setUserData] = useState({
@@ -107,13 +103,6 @@ export function HowItWorks() {
     fetchPosts()
   }, [])
 
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({"namespace":"45-min-intro-call"});
-      cal("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#FC4C69"},"dark":{"cal-brand":"#FC4C69"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    })();
-  }, [])
-
   return (
     <section id="how-it-works" className="py-16">
       <div className="container px-4 md:px-6">
@@ -154,36 +143,39 @@ export function HowItWorks() {
           </div>
         </div>
 
-        {/* Calendar Embed with Scroll on Mobile */}
-          <div className="w-full mt-16 flex justify-center px-4">
-            <div
-              className="w-full max-w-[1100px] rounded-xl overflow-hidden shadow-md bg-white"
-              style={{ height: "700px", maxHeight: "90vh" }}
-            >
-              <div
-                className="h-full overflow-y-auto"
-                style={{ WebkitOverflowScrolling: "touch" }} // smooth scrolling on iOS
-              >
-                <Cal
-                  namespace="general-sessions"
-                  onSubmit={() => {
-                    analytics.track('Call Scheduled')
+        <div className="w-full mt-16 flex justify-center px-4">
+          <div className="w-full max-w-4xl rounded-[40px] border border-border/40 bg-white/90 p-10 text-center shadow-2xl shadow-black/10">
+            <div className="space-y-4">
+              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Next steps</p>
+              <h3 className="text-3xl font-bold">Ready to scope a build?</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Share your product goals, integrations, and constraints. We&apos;ll respond within 1 business day with a
+                tailored spec workshop invite and a suggested retainer tier.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <Button
+                  className="rounded-full px-8"
+                  onClick={() => {
+                    if (typeof window === "undefined") return
+                    if (window.location.pathname === "/") {
+                      const pricingSection = document.getElementById("pricing")
+                      if (pricingSection) {
+                        pricingSection.scrollIntoView({ behavior: "smooth" })
+                        return
+                      }
+                    }
+                    window.location.href = "/#pricing"
                   }}
-                  calLink="team/atelierlogos/general-sessions"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    minHeight: "600px",
-                    border: "none",
-                  }}
-                  config={{
-                    layout: "month_view",
-                    theme: "light",
-                  }}
-                />
+                >
+                  View pricing
+                </Button>
+                <Button asChild variant="ghost" className="rounded-full border border-border/60">
+                  <a href="mailto:james@atelierlogos.com">Email us</a>
+                </Button>
               </div>
             </div>
           </div>
+        </div>
 
           {/* Blog Section 
           <div className="mt-12">

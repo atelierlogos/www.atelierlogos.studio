@@ -108,11 +108,11 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-5xl mx-auto">
-          Still vibe-coding? It's time to grow up anon...
+          You don't need <img src="https://cdn.brandfetch.io/idBx-psh22/w/1024/h/768/theme/dark/symbol.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Clay" className="inline-block h-14 align-middle mx-1" /> &mdash; build a vendorless GTM stack.
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-          Meet the spec-driven solution studio that uses rigorous planning and LLM-assistance to build robust, scalable applications for mission-critical use cases.
+          Ever wanted to build your own internal GTM stack? Let us build you a custom retainer for spec-driven development. Own your f*cking stack. 
         </p>
 
         <div className="max-w-3xl mx-auto w-full">

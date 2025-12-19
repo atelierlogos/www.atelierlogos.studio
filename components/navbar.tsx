@@ -10,8 +10,16 @@ import { Menu, X, PhoneCallIcon } from "lucide-react"
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const scheduleCall = () => {
-    window.open("https://cal.com/team/atelierlogos/general-sessions", "_blank")
+  const navigateToPricing = () => {
+    if (typeof window === "undefined") return
+    if (window.location.pathname === "/") {
+      const pricingSection = document.getElementById("pricing")
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: "smooth" })
+        return
+      }
+    }
+    window.location.href = "/#pricing"
   }
 
   const learnMore = () => {
@@ -33,10 +41,10 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Button
             className="gap-2 bg-black hover:bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-            onClick={scheduleCall}
+            onClick={navigateToPricing}
           >
             <PhoneCallIcon size={16} />
-            Schedule a Call
+            View Pricing
           </Button>
         </div>
 
@@ -61,12 +69,12 @@ export function Navbar() {
                 variant="outline"
                 className="w-full gap-2 bg-background/90 hover:bg-background border-2 border-primary/20 hover:border-primary/40 text-foreground hover:text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
                 onClick={() => {
-                  scheduleCall()
+                  navigateToPricing()
                   setIsMenuOpen(false)
                 }}
               >
                 <PhoneCallIcon size={16} />
-                Schedule a Call
+                View Pricing
               </Button>
               <Button
                 className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200"

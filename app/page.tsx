@@ -4,6 +4,8 @@ import { Features } from "@/components/features"
 import { HowItWorks } from "@/components/how-it-works"
 import { Footer } from "@/components/footer"
 import { useAnalytics } from '@/hooks/use-analytics'
+import { Blog } from "@/components/ui/blog-section"
+import { Pricing } from "@/components/pricing"
 
 export default function Home() {
   useAnalytics().page()
@@ -24,7 +26,7 @@ export default function Home() {
         </section>
         
         {/* Features Section with subtle separation */}
-        <section className="relative py-8 lg:py-16">
+        <section className="relative py-4 lg:py-16">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background pointer-events-none" />
           <div className="relative z-10">
             <Features />
@@ -32,11 +34,11 @@ export default function Home() {
         </section>
         
         {/* How It Works Section with distinct background */}
-        <section className="relative py-8 lg:py-16 bg-gradient-to-b from-background to-muted/30">
+        <section className="relative py-4 lg:py-16 bg-gradient-to-b from-background to-muted/30">
           <div className="absolute inset-0 bg-dot-black/[0.1] dark:bg-dot-white/[0.1] pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10">
-            <HowItWorks />
+            <Pricing />
           </div>
         </section>
         

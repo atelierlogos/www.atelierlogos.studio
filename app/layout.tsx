@@ -9,14 +9,14 @@ import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ 
   subsets: ["latin"], 
-  weight: ["400"],
+  weight: ["600"],
   variable: "--font-inter",
   display: "swap"
 })
 
 export const metadata: Metadata = {
   title: "Atelier Logos | Spec-driven Solutions" as const,
-  description: "Spearking solutions into existence from spec to scale." as const,
+  description: "You don't need Clay — build a vendorless GTM stack." as const,
   generator: 'v0.dev',
 
   keywords: ['LLM', 'AI', 'Software Development', 'Bespoke Solutions', 'Machine Learning'],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   creator: 'Atelier Logos',
   openGraph: {
     title: "Atelier Logos | Spec-driven Solutions",
-    description: "Spearking solutions into existence from spec to scale.",
+    description: "You don't need Clay — build a vendorless GTM stack.",
     url: "https://www.atelierlogos.studio",
     siteName: "Atelier Logos",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
-    description: "Spearking solutions into existence from spec to scale.",
+    description: "You don't need Clay — build a vendorless GTM stack.",
     images: ["https://www.atelierlogos.studio/og-image.png"]
   },
   robots: {

@@ -51,14 +51,6 @@ const navItems: NavItem[] = [
       { label: "Data Processing Agreement", href: "/dpa" },
     ],
   },
-  {
-    label: "Schedule a 45-min Chat",
-    href: "https://cal.com/team/atelierlogos/general-sessions",
-    icon: Mail,
-    desktop: false,
-    mobile: true,
-    external: true,
-  },
 ]
 
 type NavigationMenuItemsProps = {
