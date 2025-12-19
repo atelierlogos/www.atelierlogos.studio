@@ -3,7 +3,7 @@ title: "How we build complex software with type theory, strong specifications, a
 summary: ""
 author: "James Bohrman"
 published: "2025-12-18"
-image: ""
+image: "/glasses.png"
 tags: ["Spec-driven", "Software"]
 ---
 
@@ -29,9 +29,77 @@ So what sets these development ventures apart from "vibe-coders"? At the core, i
 
 Having even a foundational understanding of type theory and why it's important can be the difference in a successful LLM-assisted greenfield project and a failed experiment. We don't like failed experiments so we're going to give you the step by step into how we build projects here at Atelier Logos. We don't use tools like [Github Spec-kit](https://github.com/github/spec-kit) ourselves, but it's a great resource regardless. 
 
-### Define the data model
+### Define a initial data model
 
 We're perpetually amazed at how many Marketing Ops professionals out here who seem to just forget every bit of their foundational understanding of data structures when they open up an LLM tool. It's like we think just because it's "AI", it doesn't need structure (Remember guys, Terminator isn't real) and will just spit out whatever we want. Anytime we start a project, we first define the types and data model. This part doesn't even have to be done by hand, we use LLMs to draft the initial data model **quite often**. 
 
-Here's an example `binary.ts` from our Fugu project which helps define a structure for binary analysis. Anyone who's done **anything** with deconstructing binaries before knows that it's **not** an easy task. Granted, we used a OSS tool called [Angr](https://angr.io/) to help with a good portion of the legwork, but even then, we needed to define the structure so we could feed the output of Fugu/Angr CLI into our client application from the Rust side. You can see the results [here](https://app.arcade.software/share/ylVIO1iH2Nk2W9oVpL2K). 
+Here's an example `binary.ts` from our Fugu project which helps define a structure for binary analysis:
 
+```typescript
+export interface BinaryData {
+  name: string
+  format: string
+  architecture: string
+  endianness: string
+  entry_point: string
+  base_address: string
+  headers: Record<string, string>
+  imports: Import[]
+  exports: Export[]
+  sections: Section[]
+  entropy: number
+  metadata: Record<string, string>
+  security: SecurityFeatures
+}
+
+export interface Import {
+  name: string
+  library: string
+}
+
+export interface Export {
+  name: string
+  address: string
+}
+
+export interface Section {
+  name: string
+  virtual_address: string
+  virtual_size: string
+  file_offset: string
+  file_size: string
+  permissions: string
+  section_type: string
+  entropy: number
+  data: string
+}
+
+export interface SecurityFeatures {
+  nx: boolean
+  pie: boolean
+  relro: string
+  canary: boolean
+  fortify: boolean
+}
+```
+
+Anyone who's done **anything** related to deconstructing binaries before knows that it's **not** an easy task. Granted, we used a OSS tool called [Angr](https://angr.io/) to help with a good portion of the legwork, but even then, we needed to define the structure so we could feed the output of Fugu/Angr CLI into our client application from the Rust side. You can see the results [here](https://app.arcade.software/share/ylVIO1iH2Nk2W9oVpL2K). 
+
+The beauty of having strong typings with Typescript or Rust is that the LSP in a agentic IDE with automatically pick up when something is off and with the right model, **automatically compensate for the typing structure you have**. Without strong typings, the LLM has the potential to miss large swaths of structural issues in your code during it's iterations. 
+
+### Create a structure
+
+Once we nail down a schema, we plan out a directory structure that we can use as a sortof starter suggestion to an LLM tool such as Claude, and then we stub critical functionality such as helper functions, services files, and often we bring in our UI components in advance as well (We use [ShadCN](https://ui.shadcn.com/) and [21st.dev](https://21st.dev) pretty much exclusively).
+
+
+### Begin prompt iterations
+
+After we have a directory structure nailed down, we're ready to start banging out some initial prompt iterations and see the magic happen. What's amazing about this approach compared to "vibe-coding" is that our structure is already there, so the LLM has a lot less "guessing" it has to do to achieve optimal results. This is what will always set real developers using LLM tools apart from vibe coders, because now we can feed our `types.ts` schema into Claude Code for example, or use our directory structure with stubs inside as context for OpenAI Codex. 
+
+And from here, it's just a matter of mixing and balancing our own intuition with the assistance of our chosen LLM tools. 
+
+## Conclusion
+
+The ability to iterate and *iterate well* with LLM-assisted software development is exponentially greater when you have a defined set of criteria, and you leave as little for the LLM to guess on as possible, while also allowing the agent to take advantage of types via the LSP to automatically fix structural issues. 
+
+If you'd like us to explore how we can use this approach to help you develop internal tools for your organization, [schedule a time to chat with James](https://cal.com/team/atelierlogos/greenfield-retainer-intro) today. 
