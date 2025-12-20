@@ -5,16 +5,17 @@ import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { useToast } from "@/components/ui/use-toast"
 import { useState, FormEvent } from "react"
-import { PhoneInput } from "@/components/ui/phone-input"
 import { CheckCircle } from "lucide-react"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 declare global {
   interface Window {
     posthog?: {
-      capture: (eventName: string, properties?: Record<string, unknown>) => void
-      __loaded?: boolean
-      [key: string]: any
-    }
+      capture: (eventName: string, properties?: Record<string, unknown>) => void;
+      identify?: (distinctId?: string, properties?: Record<string, unknown>) => void;
+      __loaded?: boolean;
+      [key: string]: any;
+    };
   }
 }
 
@@ -41,15 +42,17 @@ const currentProjects = [
 
 export function HeroSection() {
   const { toast } = useToast()
+  const analytics = useAnalytics()
   const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasSignedUp, setHasSignedUp] = useState(false)
 
   const handleNewsletterSignup = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    if (!email.trim()) {
+    const trimmedEmail = email.trim()
+
+    if (!trimmedEmail) {
       toast({
         title: "Email required",
         description: "Let us know where to send updates.",
@@ -61,11 +64,23 @@ export function HeroSection() {
     setIsSubmitting(true)
 
     try {
-      window.posthog?.capture("newsletter_signup", {
-        email,
-        phone,
+      const normalizedEmail = trimmedEmail.toLowerCase()
+      const analyticsMetadata = {
+        email: trimmedEmail,
+        $email: trimmedEmail,
         source: "hero_section",
-      })
+        channel: "newsletter",
+      }
+
+      analytics.identify(normalizedEmail, analyticsMetadata)
+      analytics.track("newsletter_signup", analyticsMetadata)
+
+      if (window.posthog) {
+        window.posthog.identify?.(normalizedEmail, analyticsMetadata)
+        window.posthog.capture("newsletter_signup", {
+          ...analyticsMetadata,
+        })
+      }
 
       toast({
         title: "You're on the list",
@@ -73,7 +88,6 @@ export function HeroSection() {
       })
 
       setEmail("")
-      setPhone("")
       setHasSignedUp(true)
     } catch (error) {
       console.error("Failed to track newsletter signup", error)
@@ -128,7 +142,7 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_1.4fr]">
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
               <Input
                 type="email"
                 name="email"
@@ -139,25 +153,12 @@ export function HeroSection() {
                   setHasSignedUp(false)
                 }}
                 required
+                className="flex-1"
               />
-              <PhoneInput
-                value={phone}
-                onChange={(value) => {
-                  setPhone(value || "")
-                  setHasSignedUp(false)
-                }}
-                defaultCountry="US"
-                placeholder="+1 555 123 4567"
-                international
-                className="w-full"
-              />
-            </div>
-
-            <div className="mt-3 flex justify-center">
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full max-w-xs"
+                className="w-full sm:w-auto sm:min-w-[160px]"
               >
                 {isSubmitting ? "Joining…" : hasSignedUp ? "You're in!" : "Join the list"}
               </Button>

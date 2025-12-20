@@ -10,16 +10,8 @@ import { Menu, X, PhoneCallIcon } from "lucide-react"
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navigateToPricing = () => {
-    if (typeof window === "undefined") return
-    if (window.location.pathname === "/") {
-      const pricingSection = document.getElementById("pricing")
-      if (pricingSection) {
-        pricingSection.scrollIntoView({ behavior: "smooth" })
-        return
-      }
-    }
-    window.location.href = "/#pricing"
+  const scheduleCall = () => {
+    window.open("https://cal.com/team/atelierlogos/vendorless-intro", "_blank")
   }
 
   const learnMore = () => {
@@ -41,10 +33,10 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Button
             className="gap-2 bg-black hover:bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-            onClick={navigateToPricing}
+            onClick={scheduleCall}
           >
             <PhoneCallIcon size={16} />
-            View Pricing
+            Schedule a call
           </Button>
         </div>
 
@@ -69,7 +61,7 @@ export function Navbar() {
                 variant="outline"
                 className="w-full gap-2 bg-background/90 hover:bg-background border-2 border-primary/20 hover:border-primary/40 text-foreground hover:text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
                 onClick={() => {
-                  navigateToPricing()
+                  scheduleCall
                   setIsMenuOpen(false)
                 }}
               >
