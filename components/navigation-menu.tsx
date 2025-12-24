@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
     icon: Mail,
     hasDropdown: true,
     dropdownItems: [
-      { label: "Contact", href: "james@atelierlogos.com" },
+      { label: "Contact", href: "mailto:james@atelierlogos.com" },
       { label: "Github", href: "https://github.com/orgs/atelierlogos" },
       { label: "Linkedin", href: "https://www.linkedin.com/company/atelierlogos/" },
     ],

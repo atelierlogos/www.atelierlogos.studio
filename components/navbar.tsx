@@ -61,7 +61,7 @@ export function Navbar() {
                 variant="outline"
                 className="w-full gap-2 bg-background/90 hover:bg-background border-2 border-primary/20 hover:border-primary/40 text-foreground hover:text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
                 onClick={() => {
-                  scheduleCall
+                  scheduleCall()
                   setIsMenuOpen(false)
                 }}
               >
