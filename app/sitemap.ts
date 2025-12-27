@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { getAllIndustryGuides } from '@/lib/industries'
-import { getAllWebinars } from '@/lib/webinars'
+import { getAllWebinars } from '@/lib/webinar-db'
 import { getAllTopicHubs } from '@/lib/topic-hubs'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -92,8 +92,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic webinars
   const webinars = await getAllWebinars()
   const webinarPages: MetadataRoute.Sitemap = webinars.map((webinar) => ({
-    url: `${baseUrl}${webinar.url}`,
-    lastModified: new Date(webinar.date),
+    url: `${baseUrl}/webinars/${webinar.slug}`,
+    lastModified: new Date(webinar.scheduled_start),
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
