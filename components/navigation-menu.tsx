@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import type { LucideIcon } from "lucide-react"
-import { BookOpen, Briefcase, Mail, Settings } from "lucide-react"
+import { BookOpen, Briefcase, Mail, Settings, Building2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -19,14 +19,14 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    label: "Solutions",
-    href: "#solutions",
-    icon: Settings,
+    label: "Industries",
+    href: "#industries",
+    icon: Building2,
     hasDropdown: true,
     dropdownItems: [
-      { label: "Government", href: "/government" },
-      { label: "Startups", href: "/startups" },
-      { label: "Monthly Retainer", href: "/monthly-retainer" },
+      { label: "FinTech", href: "/industries/fintech" },
+      { label: "HealthTech", href: "/industries/healthtech" },
+      { label: "GovTech", href: "/industries/govtech" },
     ],
   },
   {
@@ -47,6 +47,7 @@ const navItems: NavItem[] = [
     hasDropdown: true,
     dropdownItems: [
       { label: "Blog", href: "/blog" },
+      { label: "Topic Hubs", href: "/topics" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Data Processing Agreement", href: "/dpa" },
     ],

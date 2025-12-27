@@ -5,10 +5,20 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { NavigationMenuItems } from "@/components/navigation-menu"
-import { Menu, X, PhoneCallIcon } from "lucide-react"
+import { Menu, X, PhoneCallIcon, User, LogOut } from "lucide-react"
+import { useSession, signOut } from "@/lib/auth-client"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { data: session } = useSession()
 
   const scheduleCall = () => {
     window.open("https://cal.com/team/atelierlogos/vendorless-intro", "_blank")
@@ -16,6 +26,11 @@ export function Navbar() {
 
   const learnMore = () => {
     window.open("https://www.atelierlogos.studio/about", "_blank")
+  }
+
+  const handleSignOut = async () => {
+    await signOut()
+    window.location.href = "/"
   }
 
   return (
@@ -38,6 +53,34 @@ export function Navbar() {
             <PhoneCallIcon size={16} />
             Schedule a call
           </Button>
+
+          {session ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <User className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuLabel>
+                  {session.user?.email || "My Account"}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/webinars/admin">Webinar Admin</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sign Out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button variant="outline" asChild>
+              <Link href="/sign-in">Sign In</Link>
+            </Button>
+          )}
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -77,6 +120,42 @@ export function Navbar() {
               >
                 Learn more
               </Button>
+
+              {session ? (
+                <>
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    asChild
+                  >
+                    <Link href="/webinars/admin" onClick={() => setIsMenuOpen(false)}>
+                      <User className="mr-2 h-4 w-4" />
+                      Webinar Admin
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full"
+                    onClick={() => {
+                      handleSignOut()
+                      setIsMenuOpen(false)
+                    }}
+                  >
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Sign Out
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  asChild
+                >
+                  <Link href="/sign-in" onClick={() => setIsMenuOpen(false)}>
+                    Sign In
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
