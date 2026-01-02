@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
     openGraph: {
       title: guide.title,
       description: guide.description,
-      images: guide.image ? [{ url: guide.image }] : [],
+      images: [`/api/og?title=${encodeURIComponent(guide.title)}&subtitle=${encodeURIComponent(guide.description)}`],
     },
   }
 }

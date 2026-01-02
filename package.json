@@ -20,6 +20,7 @@
     "@codesandbox/sandpack-react": "^2.20.0",
     "@fontsource/inter": "^5.2.6",
     "@hookform/resolvers": "^3.9.1",
+    "@ibm/plex": "^6.4.1",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@neondatabase/serverless": "^1.0.2",

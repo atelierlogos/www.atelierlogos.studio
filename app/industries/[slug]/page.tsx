@@ -32,9 +32,7 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.atelierlogos.studio'
   const guideUrl = `${baseUrl}/industries/${params.slug}`
 
-  const imageUrl = guide.image.startsWith('http')
-    ? guide.image
-    : `${baseUrl}${guide.image}`
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(guide.title)}&subtitle=${encodeURIComponent(guide.metaDescription)}`
 
   return {
     title: `${guide.title} | Atelier Logos`,
@@ -59,11 +57,11 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
       authors: [guide.author],
       images: [
         {
-          url: imageUrl,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: guide.title,
-          type: 'image/jpeg',
+          type: 'image/png',
         }
       ],
       locale: 'en_US',
@@ -72,7 +70,7 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
       card: 'summary_large_image',
       title: guide.title,
       description: guide.metaDescription,
-      images: [imageUrl],
+      images: [ogImageUrl],
       creator: '@atelierlogos',
       site: '@atelierlogos',
     },
@@ -82,7 +80,7 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
     other: {
       'og:image:width': '1200',
       'og:image:height': '630',
-      'og:image:type': 'image/jpeg',
+      'og:image:type': 'image/png',
       'twitter:label1': 'Industry',
       'twitter:data1': guide.industry,
       'twitter:label2': 'Reading time',

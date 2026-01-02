@@ -11,13 +11,13 @@ export function Features() {
               The Magic
             </div>
             <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-5xl">
-               Turning complex behomoth goals{" "}
+               We use strong specs {" "}
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-black">
-                 into weekend sprints
+                to contextualize AI-assisted sprints
               </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
-              We specialize in handling the complex, esoteric, and mission-critical aspects of software development work by avoiding the hype of vibe coding.
+              We specialize in building powerful and efficient software by taking advantage of the latest AI-assisted development tools and methodologies.
             </p>
           </div>
         </div>

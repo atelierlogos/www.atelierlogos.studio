@@ -1,16 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AnalyticsProvider } from "@/components/analytics-provider"
 import { Toaster } from "@/components/ui/toaster"
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  weight: ["600"],
-  variable: "--font-inter",
+const bebasNeue = localFont({
+  src: "../public/fonts/BebasNeue-Regular.ttf",
+  variable: "--font-bebas-neue",
   display: "swap"
 })
 
@@ -29,9 +28,9 @@ export const metadata: Metadata = {
     siteName: "Atelier Logos",
     images: [
       {
-        url: "https://www.atelierlogos.studio/og-image.png",
-        width: 2910,
-        height: 1540,
+        url: "/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5",
+        width: 1200,
+        height: 630,
         alt: "Atelier Logos - Spec-driven Solutions",
       }
     ],
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
     description: "We use spec-driven development to build custom software solutions.",
-    images: ["https://www.atelierlogos.studio/og-image.png"]
+    images: ["/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5"]
   },
   robots: {
     index: true,
@@ -66,7 +65,7 @@ export default function RootLayout({
   const description = metadata.description as string
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${bebasNeue.variable}`}>
       <head>
         <meta name="description" content={description} />
         <link rel="canonical" href="https://www.atelierlogos.studio" />
@@ -89,17 +88,15 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Atelier Logos" />
-        
 
-        
 
-        
+
+
+
         {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://cdn.segment.com" />
       </head>
-      <body className={`${inter.className} antialiased min-h-screen bg-gradient-to-br from-background to-background/95 text-foreground selection:bg-black selection:text-white`}> 
+      <body className={`${bebasNeue.className} antialiased min-h-screen bg-gradient-to-br from-background to-background/95 text-foreground selection:bg-black selection:text-white`}> 
         <Script
           id="posthog"
           strategy="afterInteractive"

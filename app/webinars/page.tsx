@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'Webinars | Atelier Logos',
     description: 'Join our webinars on spec-driven development and LLM-assisted programming.',
     type: 'website',
+    images: ['/api/og?title=Webinars&subtitle=Technical%20sessions%20on%20spec-driven%20development'],
   },
 }
 

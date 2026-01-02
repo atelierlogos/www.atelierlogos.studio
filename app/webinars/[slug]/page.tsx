@@ -34,6 +34,8 @@ export async function generateMetadata({ params }: WebinarPageProps): Promise<Me
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.atelierlogos.studio'
   const webinarUrl = `${baseUrl}/webinars/${slug}`
 
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(webinar.title)}&subtitle=${encodeURIComponent(webinar.description || 'Join our webinar on spec-driven development')}`
+
   return {
     title: `${webinar.title} | Atelier Logos Webinars`,
     description: webinar.description || 'Join our webinar on spec-driven development and software architecture.',
@@ -54,11 +56,21 @@ export async function generateMetadata({ params }: WebinarPageProps): Promise<Me
       type: 'article',
       publishedTime: new Date(webinar.scheduled_start).toISOString(),
       locale: 'en_US',
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: webinar.title,
+          type: 'image/png',
+        }
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: webinar.title,
       description: webinar.description || '',
+      images: [ogImageUrl],
       creator: '@atelierlogos',
       site: '@atelierlogos',
     },

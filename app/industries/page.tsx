@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'Industry Guides | Atelier Logos',
     description: 'Learn how spec-driven development with LLM assistance works across different industries.',
     type: 'website',
+    images: ['/api/og?title=Industry%20Guides&subtitle=Spec-driven%20development%20across%20industries'],
   },
 }
 

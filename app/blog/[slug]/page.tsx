@@ -31,11 +31,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.atelierlogos.studio'
   const postUrl = `${baseUrl}/blog/${params.slug}`
-  
-  // Ensure the image URL is absolute
-  const imageUrl = post.image.startsWith('http') 
-    ? post.image 
-    : `${baseUrl}${post.image}`
+
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.summary)}`
 
   return {
     title: `${post.title} | Atelier Logos Blog`,
@@ -61,11 +58,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       tags: post.tags,
       images: [
         {
-          url: imageUrl,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
-          type: 'image/jpeg',
+          type: 'image/png',
         }
       ],
       locale: 'en_US',
@@ -74,7 +71,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       card: 'summary_large_image',
       title: post.title,
       description: post.summary,
-      images: [imageUrl],
+      images: [ogImageUrl],
       creator: '@atelierlogos',
       site: '@atelierlogos',
     },
@@ -85,7 +82,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       // Additional meta tags for better social media compatibility
       'og:image:width': '1200',
       'og:image:height': '630',
-      'og:image:type': 'image/jpeg',
+      'og:image:type': 'image/png',
       'twitter:label1': 'Written by',
       'twitter:data1': post.author,
       'twitter:label2': 'Reading time',
