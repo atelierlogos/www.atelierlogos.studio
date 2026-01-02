@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { useToast } from "@/components/ui/use-toast"
-import { useState, FormEvent } from "react"
+import { useState, FormEvent, useEffect } from "react"
 import { CheckCircle } from "lucide-react"
 import { useAnalytics } from "@/hooks/use-analytics"
 
@@ -39,6 +39,54 @@ const currentProjects = [
     logo_url: "/nooklanes.png",
   },
 ]
+
+const aiLogos = [
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/openai.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/claude-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/mcp.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/gemini-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/replit-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/cloudflare-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/exa-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/manus.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/v0.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/vllm-color.png",
+]
+
+function CyclingLogo() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % aiLogos.length)
+        setTimeout(() => {
+          setIsTransitioning(false)
+        }, 50)
+      }, 300)
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span className="inline-flex items-center justify-center relative mx-2" style={{ width: "80px", height: "80px", verticalAlign: "middle" }}>
+      <img
+        src={aiLogos[currentIndex]}
+        alt="AI Tool"
+        className="transition-opacity duration-300"
+        style={{
+          height: "80px",
+          width: "80px",
+          objectFit: "contain",
+          opacity: isTransitioning ? 0 : 1,
+        }}
+      />
+    </span>
+  )
+}
 
 export function HeroSection() {
   const { toast } = useToast()
@@ -121,12 +169,12 @@ export function HeroSection() {
           </div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-5xl mx-auto">
-          You don't need <img src="https://cdn.brandfetch.io/idBx-psh22/w/1024/h/768/theme/dark/symbol.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Clay" className="inline-block h-14 align-middle mx-1" /> &mdash; build a vendorless GTM stack.
+        <h1 className="text-6xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-6xl mx-auto">
+        Specs + <CyclingLogo /> = Beautiful Software for Less 💵
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-          Ever wanted to build your own internal GTM stack? Let us build you a custom retainer for spec-driven development. Own your f*cking stack. 
+          We build custom software solutions using spec-driven development to plan, map, and type your system to AI-assisted development tools before any work is started.
         </p>
 
         <div className="max-w-3xl mx-auto w-full">
@@ -171,44 +219,12 @@ export function HeroSection() {
             )}
           </form>
         </div>
-
-        <div className="pt-20 border-t border-border/30 max-w-5xl mx-auto">
-          <div className="space-y-3 text-center mb-12">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Our Current Projects</p>
-            <h3 className="text-3xl md:text-4xl font-semibold text-foreground">Three builds we are obsessing over right now.</h3>
-            <p className="text-muted-foreground">
-              We're always a bit feral for chances to build. Here are a few of our current in-house projects that showcase our spec-driven approach to building robust, scalable applications.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {currentProjects.map((project) => (
-              <div
-                key={project.name}
-                className="rounded-2xl border border-border/40 bg-white/80 backdrop-blur p-6 text-left shadow-sm"
-              >
-                <div className="mb-4 flex items-center gap-4">
-                  <Image
-                    src={project.logo_url}
-                    alt={`${project.name} Logo`}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 object-contain"
-                  />
-                  <div>
-                    <h4 className="text-lg font-semibold">{project.name}</h4>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{project.category}</p>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
         <div className="pt-20 border-t border-border/30 max-w-5xl mx-auto">
           <div className="space-y-3 text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-semibold text-foreground">See a walkthrough of Colony</h3>
+            <h3 className="text-3xl md:text-4xl font-semibold text-foreground">See one of our builds</h3>
             <p className="text-muted-foreground">
-              We're always a bit feral for chances to build. Here are a few of our current in-house projects that showcase our spec-driven approach to building robust, scalable applications.
+              We built <strong>Colony</strong>, a vendor operations platform that helps companies manage their external workforce with ease.
             </p>
           </div>
           <div className="flex justify-center">
@@ -240,7 +256,6 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }

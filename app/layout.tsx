@@ -16,7 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Atelier Logos | Spec-driven Solutions" as const,
-  description: "You don't need Clay — build a vendorless GTM stack." as const,
+  description: "We use spec-driven development to build custom software solutions." as const,
   generator: 'v0.dev',
 
   keywords: ['LLM', 'AI', 'Software Development', 'Bespoke Solutions', 'Machine Learning'],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   creator: 'Atelier Logos',
   openGraph: {
     title: "Atelier Logos | Spec-driven Solutions",
-    description: "You don't need Clay — build a vendorless GTM stack.",
+    description: "We use spec-driven development to build custom software solutions",
     url: "https://www.atelierlogos.studio",
     siteName: "Atelier Logos",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
-    description: "You don't need Clay — build a vendorless GTM stack.",
+    description: "We use spec-driven development to build custom software solutions.",
     images: ["https://www.atelierlogos.studio/og-image.png"]
   },
   robots: {
