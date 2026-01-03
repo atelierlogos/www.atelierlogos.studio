@@ -68,52 +68,52 @@ export function Pricing() {
         </p>
       </div>
 
-      <div className="flex justify-between flex-wrap w-full max-w-5xl border border-primary/10">
+      <div className="flex justify-between flex-wrap gap-6 w-full max-w-6xl">
         {pricingPlans.map((plan, index) => (
           <div
             key={plan.title}
-            className={`flex-1 min-w-[280px] border-primary/10 ${
-              index === 1 ? "border-x" : "border-r last:border-r-0 md:last:border-r"
+            className={`flex-1 min-w-[280px] rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
+              plan.popular ? "relative" : ""
             }`}
           >
-            <div className="p-8 flex flex-col h-full gap-6 justify-between">
+            {plan.popular && (
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary border-4 border-black px-4 py-1 rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-xs uppercase tracking-[0.2em] font-bold text-black">
+                Most Popular
+              </div>
+            )}
+            <div className="flex flex-col h-full gap-6 justify-between">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-4">
-                  <div className="font-semibold text-xl leading-snug">
-                    {plan.title}{" "}
-                    {plan.popular && (
-                      <span className="text-xs uppercase tracking-[0.2em] text-primary">
-                        most popular
-                      </span>
-                    )}
+                  <div className="font-bold text-2xl leading-snug">
+                    {plan.title}
                   </div>
-                  <p className="opacity-80 text-sm leading-relaxed">{plan.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
                   <div className="text-sm uppercase tracking-[0.2em]">
-                    <span className="text-2xl font-bold">{plan.price}</span>{" "}
-                    <span className="text-muted-foreground lowercase">{plan.cadence}</span>
+                    <span className="text-3xl font-black">{plan.price}</span>{" "}
+                    <span className="text-muted-foreground lowercase font-bold">{plan.cadence}</span>
                   </div>
                 </div>
-                <hr />
+                <hr className="border-2 border-black" />
 
                 <div className="flex flex-col gap-3">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2 text-sm">
-                      <CheckIcon className="w-4 h-4" />
-                      <span>{feature}</span>
+                      <CheckIcon className="w-5 h-5 font-bold" />
+                      <span className="font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <hr />
+              <hr className="border-2 border-black" />
               <div>
                 <Link
                   href={plan.ctaLink}
                   target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
                   rel={plan.ctaLink.startsWith("http") ? "noreferrer" : undefined}
-                  className={`inline-flex w-[160px] h-11 items-center justify-center rounded-none border text-sm font-semibold transition-colors ${
+                  className={`inline-flex w-full h-12 items-center justify-center rounded-lg border-4 border-black text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all ${
                     plan.popular
-                      ? "bg-[#ff6d3d] text-white hover:bg-[#ff6d3d]/80"
-                      : "bg-[#fff1e9] text-[#ff6d3d] border border-[#ffb38f] hover:bg-[#ff6d3d] hover:text-white"
+                      ? "bg-primary text-black"
+                      : "bg-white text-black"
                   }`}
                 >
                   Book a call

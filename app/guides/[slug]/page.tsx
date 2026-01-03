@@ -6,6 +6,13 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, Home, BookOpen } from 'lucide-react'
+import { Spectral } from 'next/font/google'
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+})
 
 interface GuidePageProps {
   params: {
@@ -58,7 +65,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <Navbar />
 
       {/* Breadcrumbs */}
-      <section className="border-b border-border bg-muted/30">
+      <section className="border-b-4 border-black bg-white">
         <div className="container mx-auto max-w-4xl px-6 lg:px-8 py-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground transition-colors flex items-center gap-1">
@@ -108,7 +115,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
             {guide.title}
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className={`text-base md:text-lg text-muted-foreground leading-relaxed ${spectral.className}`}>
             {guide.description}
           </p>
         </div>
@@ -121,7 +128,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           {/* Content */}
           <div className="mb-12 md:mb-16">
             <div
-              className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+              className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                 prose-p:text-muted-foreground prose-p:leading-relaxed
                 prose-headings:text-foreground prose-strong:text-foreground
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -137,21 +144,21 @@ export default async function GuidePage({ params }: GuidePageProps) {
                 prose-thead:border-b-2 prose-thead:border-border
                 prose-th:text-left prose-th:font-semibold prose-th:text-foreground prose-th:py-3 prose-th:px-4
                 prose-td:text-foreground prose-td:py-3 prose-td:px-4 prose-td:border-t prose-td:border-border
-                prose-tr:border-b prose-tr:border-border"
+                prose-tr:border-b prose-tr:border-border`}
               dangerouslySetInnerHTML={{ __html: guide.content }}
             />
           </div>
 
           {/* Related Guides */}
           {relatedGuides.length > 0 && (
-            <section className="border-t border-border pt-8 md:pt-12 mb-12">
+            <section className="border-t-4 border-black pt-8 md:pt-12 mb-12">
               <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6">Related Guides</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedGuides.map((related) => (
                   <Link
                     key={related.slug}
                     href={related.url}
-                    className="group flex flex-col p-4 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all"
+                    className="group flex flex-col p-4 rounded-xl border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                   >
                     <div className="flex items-start gap-2 mb-2">
                       <ArrowRight className="h-4 w-4 flex-shrink-0 mt-1 text-primary" />
@@ -159,7 +166,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
                         {related.title}
                       </h3>
                     </div>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
+                    <p className={`text-sm text-muted-foreground line-clamp-2 ${spectral.className}`}>
                       {related.description}
                     </p>
                   </Link>
@@ -170,18 +177,18 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
           {/* Back to Topic Hub */}
           {parentTopic && (
-            <section className="border-t border-border pt-8">
-              <div className="rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6">
+            <section className="border-t-4 border-black pt-8">
+              <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-semibold mb-1">Explore More</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <h3 className="font-bold mb-1">Explore More</h3>
+                    <p className={`text-sm text-muted-foreground ${spectral.className}`}>
                       Discover more guides in {parentTopic.title}
                     </p>
                   </div>
                   <Link
                     href={parentTopic.url}
-                    className="inline-flex h-10 items-center justify-center rounded-lg bg-black text-white px-6 text-sm font-medium shadow transition-colors hover:bg-black/90"
+                    className="inline-flex h-10 items-center justify-center rounded-lg bg-primary border-4 border-black text-black px-6 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                   >
                     View Topic
                   </Link>

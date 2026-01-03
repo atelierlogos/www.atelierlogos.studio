@@ -1,4 +1,11 @@
 import Link from "next/link"
+import { Spectral } from "next/font/google"
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+})
 
 const dataProcessingPrinciples = [
   {
@@ -45,19 +52,19 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-6xl px-4 py-16">
-        <section className="space-y-3 border-b border-border/30 pb-8">
-          <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Privacy Policy</p>
+        <section className="space-y-3 border-b-4 border-black pb-8">
+          <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground font-bold">Privacy Policy</p>
           <h1 className="text-4xl font-semibold">How Atelier Logos protects the people behind every request.</h1>
-          <p className="text-lg text-muted-foreground">
+          <p className={`text-lg text-muted-foreground ${spectral.className}`}>
             We are an LLM solutions studio that treats privacy as a feature. This page explains how we collect, use,
             secure, and share the data you entrust to us so you can partner with confidence.
           </p>
         </section>
 
         <section className="mt-12 grid gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-border/40 bg-white/80 p-6 shadow-sm shadow-black/5">
-            <h2 className="text-xl font-semibold">Key data we work with</h2>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+          <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <h2 className="text-xl font-bold">Key data we work with</h2>
+            <ul className={`mt-4 space-y-3 text-sm text-muted-foreground ${spectral.className}`}>
               <li>
                 <strong>Contact data:</strong> names, titles, business emails, and phone numbers you provide when you
                 request a consultation or access deliverables.
@@ -76,9 +83,9 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-border/40 bg-white/80 p-6 shadow-sm shadow-black/5">
-            <h2 className="text-xl font-semibold">How we collect data</h2>
-            <p className="mt-4 text-sm text-muted-foreground">
+          <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <h2 className="text-xl font-bold">How we collect data</h2>
+            <p className={`mt-4 text-sm text-muted-foreground ${spectral.className}`}>
               We rely on explicit customer inputs (emails, forms), integrations with tooling you authorize (e.g.,
               analytics, scheduling), and the cookies that power necessary sessions. All marketing tracking can be
               disabled through our cookie banner, and you are welcome to email us at{" "}
@@ -94,9 +101,9 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-2xl font-semibold">Data processing principles</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {dataProcessingPrinciples.map((principle) => (
-              <div key={principle.title} className="rounded-2xl border border-border/30 bg-muted/10 p-5">
-                <h3 className="text-lg font-semibold">{principle.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{principle.description}</p>
+              <div key={principle.title} className="rounded-xl border-4 border-black bg-white p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <h3 className="text-lg font-bold">{principle.title}</h3>
+                <p className={`mt-2 text-sm text-muted-foreground ${spectral.className}`}>{principle.description}</p>
               </div>
             ))}
           </div>
@@ -104,7 +111,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-semibold">How we secure it</h2>
-          <div className="space-y-4 text-sm text-muted-foreground">
+          <div className={`space-y-4 text-sm text-muted-foreground ${spectral.className}`}>
             <p>
               We host services on managed providers (AWS, Vercel, Supabase) with SOC 2 Type II controls. We encrypt all
               data in transit (TLS 1.3) and at rest, rotate secrets quarterly, and require multi-factor authentication
@@ -123,25 +130,25 @@ export default function PrivacyPolicyPage() {
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-semibold">Your rights</h2>
-          <p className="text-sm text-muted-foreground">
+          <p className={`text-sm text-muted-foreground ${spectral.className}`}>
             Depending on your jurisdiction, you may have additional rights. We respect them all. Submit requests at{" "}
             <Link href="mailto:hello@atelierlogos.com" className="text-foreground underline">
               hello@atelierlogos.com
             </Link>
             .
           </p>
-          <ul className="grid gap-2 text-sm text-muted-foreground md:grid-cols-2">
+          <ul className={`grid gap-2 text-sm text-foreground md:grid-cols-2 ${spectral.className}`}>
             {rights.map((right) => (
-              <li key={right} className="rounded-xl border border-border/40 bg-white/70 px-4 py-2">
+              <li key={right} className="rounded-lg border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-medium">
                 {right}
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mt-12 space-y-4 rounded-2xl border border-border/30 bg-muted/10 p-6">
-          <h2 className="text-xl font-semibold">Contact & updates</h2>
-          <p className="text-sm text-muted-foreground">
+        <section className="mt-12 space-y-4 rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <h2 className="text-xl font-bold">Contact & updates</h2>
+          <p className={`text-sm text-muted-foreground ${spectral.className}`}>
             We publish policy changes at least 30 days before they take effect. If you are a client, we will surface
             notices inside the shared workspace and by email. You can also reach us directly at{" "}
             <Link href="mailto:hello@atelierlogos.com" className="text-foreground underline">

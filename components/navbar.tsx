@@ -34,7 +34,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b-4 border-black bg-background shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <Button
-            className="gap-2 bg-black hover:bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+            className="gap-2 bg-primary border-4 border-black text-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
             onClick={scheduleCall}
           >
             <PhoneCallIcon size={16} />
@@ -57,7 +57,7 @@ export function Navbar() {
           {session ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                   <User className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -77,7 +77,7 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-bold">
               <Link href="/sign-in">Sign In</Link>
             </Button>
           )}
@@ -95,14 +95,14 @@ export function Navbar() {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur">
+        <div className="md:hidden border-t-4 border-black bg-background">
           <div className="container py-4">
             <NavigationMenuItems variant="mobile" onNavigate={() => setIsMenuOpen(false)} />
 
-            <div className="pt-4 mt-4 border-t border-border/50 space-y-2">
+            <div className="pt-4 mt-4 border-t-4 border-black space-y-2">
               <Button
                 variant="outline"
-                className="w-full gap-2 bg-background/90 hover:bg-background border-2 border-primary/20 hover:border-primary/40 text-foreground hover:text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
+                className="w-full gap-2 bg-white border-4 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 onClick={() => {
                   scheduleCall()
                   setIsMenuOpen(false)
@@ -112,7 +112,7 @@ export function Navbar() {
                 View Pricing
               </Button>
               <Button
-                className="w-full gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                className="w-full gap-2 bg-primary border-4 border-black text-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 onClick={() => {
                   learnMore()
                   setIsMenuOpen(false)
@@ -125,7 +125,7 @@ export function Navbar() {
                 <>
                   <Button
                     variant="outline"
-                    className="w-full"
+                    className="w-full border-4 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                     asChild
                   >
                     <Link href="/webinars/admin" onClick={() => setIsMenuOpen(false)}>
@@ -134,8 +134,8 @@ export function Navbar() {
                     </Link>
                   </Button>
                   <Button
-                    variant="ghost"
-                    className="w-full"
+                    variant="outline"
+                    className="w-full border-4 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                     onClick={() => {
                       handleSignOut()
                       setIsMenuOpen(false)
@@ -148,7 +148,7 @@ export function Navbar() {
               ) : (
                 <Button
                   variant="outline"
-                  className="w-full"
+                  className="w-full border-4 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                   asChild
                 >
                   <Link href="/sign-in" onClick={() => setIsMenuOpen(false)}>

@@ -5,6 +5,13 @@ import { ShareWidget } from '@/components/share-widget'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Spectral } from 'next/font/google'
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+})
 
 interface IndustryPageProps {
   params: {
@@ -119,29 +126,28 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+              <div className="inline-flex items-center rounded-xl border-4 border-black bg-white px-6 py-2 text-sm font-bold text-foreground mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                 <span>{guide.industry}</span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6 leading-tight">
                 {guide.heroTitle}
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className={`text-base md:text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed ${spectral.className}`}>
                 {guide.heroSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#overview"
-                  className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded-lg bg-black text-white px-8 text-sm font-medium shadow transition-colors hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded-lg bg-primary border-4 border-black text-black px-8 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 >
                   Read the Guide
                 </Link>
                 <Link
                   href="https://cal.com/team/atelierlogos/greenfield-retainer-intro"
-                  className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded-lg border-2 border-black bg-transparent text-black px-8 text-sm font-medium shadow-sm transition-colors hover:bg-black hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="w-full sm:w-auto inline-flex h-12 items-center justify-center rounded-lg border-4 border-black bg-white text-black px-8 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 >
                   Schedule a Call
                 </Link>
@@ -162,7 +168,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-xl md:rounded-2xl border border-border/50 shadow-2xl">
+              <div className="aspect-[4/3] overflow-hidden rounded-xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <img
                   src={guide.image}
                   alt={guide.title}
@@ -180,7 +186,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           {/* Table of Contents Card */}
           <div className="mb-12 md:mb-16">
-            <div className="rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6 md:p-8">
+            <div className="rounded-xl border-4 border-black bg-white p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -192,7 +198,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-primary/5"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg border-2 border-transparent hover:border-black hover:bg-primary/5"
                   >
                     <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -211,7 +217,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="overview" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Overview</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -220,7 +226,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-code:font-mono prose-code:before:content-none prose-code:after:content-none prose-code:break-words prose-code:font-semibold
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
-                    [&_pre_code]:!text-white [&_pre_code]:!bg-transparent"
+                    [&_pre_code]:!text-white [&_pre_code]:!bg-transparent`}
                   dangerouslySetInnerHTML={{ __html: guide.overview }}
                 />
               </section>
@@ -229,7 +235,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="challenges" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Key Challenges</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -239,7 +245,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
                     [&_pre_code]:!text-white [&_pre_code]:!bg-transparent
-                    prose-ul:text-muted-foreground prose-li:text-muted-foreground"
+                    prose-ul:text-muted-foreground prose-li:text-muted-foreground`}
                   dangerouslySetInnerHTML={{ __html: guide.challenges }}
                 />
               </section>
@@ -248,7 +254,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="approach" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Spec-Driven Approach</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -258,7 +264,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
                     [&_pre_code]:!text-white [&_pre_code]:!bg-transparent
-                    prose-ul:text-muted-foreground prose-li:text-muted-foreground"
+                    prose-ul:text-muted-foreground prose-li:text-muted-foreground`}
                   dangerouslySetInnerHTML={{ __html: guide.specDrivenApproach }}
                 />
               </section>
@@ -267,7 +273,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="architecture" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Architecture Patterns</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -277,7 +283,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
                     [&_pre_code]:!text-white [&_pre_code]:!bg-transparent
-                    prose-ul:text-muted-foreground prose-li:text-muted-foreground"
+                    prose-ul:text-muted-foreground prose-li:text-muted-foreground`}
                   dangerouslySetInnerHTML={{ __html: guide.architecturePatterns }}
                 />
               </section>
@@ -286,7 +292,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="technical" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Technical Deep Dive</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -296,7 +302,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
                     [&_pre_code]:!text-white [&_pre_code]:!bg-transparent
-                    prose-ul:text-muted-foreground prose-li:text-muted-foreground"
+                    prose-ul:text-muted-foreground prose-li:text-muted-foreground`}
                   dangerouslySetInnerHTML={{ __html: guide.technicalDeepDive }}
                 />
               </section>
@@ -305,7 +311,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <section id="benefits" className="scroll-mt-20 md:scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Benefits</h2>
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -315,15 +321,15 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
                     [&_pre_code]:!text-white [&_pre_code]:!bg-transparent
-                    prose-ul:text-muted-foreground prose-li:text-muted-foreground"
+                    prose-ul:text-muted-foreground prose-li:text-muted-foreground`}
                   dangerouslySetInnerHTML={{ __html: guide.benefits }}
                 />
               </section>
 
               {/* Call to Action */}
-              <section className="scroll-mt-20 md:scroll-mt-24 border-t border-border pt-8 md:pt-12">
+              <section className="scroll-mt-20 md:scroll-mt-24 border-t-4 border-black pt-8 md:pt-12">
                 <div
-                  className="prose prose-base md:prose-lg dark:prose-invert max-w-none
+                  className={`prose prose-base md:prose-lg dark:prose-invert max-w-none ${spectral.className}
                     prose-p:text-muted-foreground prose-p:leading-relaxed
                     prose-headings:text-foreground prose-strong:text-foreground
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline
@@ -332,21 +338,21 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     prose-code:font-mono prose-code:before:content-none prose-code:after:content-none prose-code:break-words prose-code:font-semibold
                     prose-pre:!bg-black prose-pre:!text-white prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:border-0
                     prose-pre:shadow-lg
-                    [&_pre_code]:!text-white [&_pre_code]:!bg-transparent"
+                    [&_pre_code]:!text-white [&_pre_code]:!bg-transparent`}
                   dangerouslySetInnerHTML={{ __html: guide.callToAction }}
                 />
               </section>
 
               {/* Related Industries */}
               {guide.relatedIndustries.length > 0 && (
-                <section className="scroll-mt-20 md:scroll-mt-24 border-t border-border pt-8 md:pt-12">
+                <section className="scroll-mt-20 md:scroll-mt-24 border-t-4 border-black pt-8 md:pt-12">
                   <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-4 md:mb-6">Related Industry Guides</h2>
                   <div className="flex flex-wrap gap-3">
                     {guide.relatedIndustries.map((industry) => (
                       <Link
                         key={industry}
                         href={`/industries/${industry.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="inline-flex items-center rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+                        className="inline-flex items-center rounded-lg border-4 border-black bg-white px-4 py-2 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                       >
                         <span className="truncate">{industry}</span>
                         <svg className="ml-2 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -359,12 +365,12 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               )}
 
               {/* Keywords */}
-              <section className="border-t border-border pt-6 md:pt-8">
+              <section className="border-t-4 border-black pt-6 md:pt-8">
                 <div className="flex flex-wrap gap-2">
                   {guide.keywords.map((keyword) => (
                     <span
                       key={keyword}
-                      className="text-xs px-3 py-1.5 bg-muted rounded-full text-muted-foreground font-medium truncate max-w-full"
+                      className="text-xs px-3 py-1.5 bg-white border-2 border-black rounded-full text-foreground font-bold truncate max-w-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                     >
                       {keyword}
                     </span>

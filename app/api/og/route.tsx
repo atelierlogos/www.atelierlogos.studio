@@ -24,14 +24,17 @@ export async function GET(req: NextRequest) {
 
     // Get customizable parameters from query string
     const title = searchParams.get('title') || 'Atelier Logos';
-    const subtitle = searchParams.get('subtitle') || 'Beautiful Software for Less 💵';
+    const subtitle = searchParams.get('subtitle') || 'Kill your vendors. ☠️';
 
     // Fetch logo
     const logoUrl = new URL('/logo.png', req.url.replace('/api/og', '')).toString();
 
-    // Load Bebas Neue font from local fonts directory
-    const fontPath = join(process.cwd(), 'public', 'fonts', 'BebasNeue-Regular.ttf');
-    const fontData = readFileSync(fontPath);
+    // Load fonts from local fonts directory
+    const bebasFontPath = join(process.cwd(), 'public', 'fonts', 'BebasNeue-Regular.ttf');
+    const bebasFontData = readFileSync(bebasFontPath);
+
+    const spectralFontPath = join(process.cwd(), 'public', 'fonts', 'Spectral-Regular.ttf');
+    const spectralFontData = readFileSync(spectralFontPath);
 
     return new ImageResponse(
       (
@@ -41,7 +44,7 @@ export async function GET(req: NextRequest) {
             width: '100%',
             display: 'flex',
             flexDirection: 'row',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%)',
+            background: 'hsl(160, 50%, 97%)',
             fontFamily: '"Bebas Neue", sans-serif',
           }}
         >
@@ -55,7 +58,8 @@ export async function GET(req: NextRequest) {
               width: '50%',
               height: '100%',
               padding: '80px 70px',
-              borderRight: '1px solid #E5E7EB',
+              borderRight: '8px solid #000000',
+              background: 'hsl(160, 50%, 97%)',
             }}
           >
             {/* Logo */}
@@ -64,7 +68,6 @@ export async function GET(req: NextRequest) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                filter: 'drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.08))',
               }}
             >
               <img
@@ -91,14 +94,15 @@ export async function GET(req: NextRequest) {
             >
               <h1
                 style={{
-                  fontSize: '72px',
-                  fontWeight: 700,
+                  fontSize: '80px',
+                  fontWeight: 900,
                   margin: 0,
                   textAlign: 'center',
-                  lineHeight: 1,
-                  letterSpacing: '-0.03em',
-                  color: '#111827',
+                  lineHeight: 0.9,
+                  letterSpacing: '-0.02em',
+                  color: '#000000',
                   maxWidth: '90%',
+                  textTransform: 'uppercase',
                 }}
               >
                 {title}
@@ -106,14 +110,15 @@ export async function GET(req: NextRequest) {
               {subtitle && (
                 <p
                   style={{
-                    fontSize: '28px',
-                    fontWeight: 400,
+                    fontSize: '26px',
+                    fontWeight: 600,
                     margin: 0,
                     textAlign: 'center',
-                    lineHeight: 1.4,
-                    color: '#6B7280',
-                    letterSpacing: '-0.01em',
+                    lineHeight: 1.3,
+                    color: '#374151',
+                    letterSpacing: '0em',
                     maxWidth: '90%',
+                    fontFamily: '"Spectral", serif',
                   }}
                 >
                   {subtitle}
@@ -130,14 +135,17 @@ export async function GET(req: NextRequest) {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '20px',
+              gap: '18px',
               justifyContent: 'center',
               alignItems: 'center',
               alignContent: 'center',
               width: '50%',
               height: '100%',
               padding: '80px 60px',
-              background: 'linear-gradient(135deg, #FAFBFC 0%, #F3F4F6 100%)',
+              background: 'hsl(160, 50%, 97%)',
+              position: 'relative',
+              backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)',
+              backgroundSize: '32px 32px',
             }}
           >
             {icons.map((icon, index) => (
@@ -145,15 +153,15 @@ export async function GET(req: NextRequest) {
                 key={index}
                 style={{
                   display: 'flex',
-                  width: '88px',
-                  height: '88px',
-                  borderRadius: '16px',
+                  width: '92px',
+                  height: '92px',
+                  borderRadius: '12px',
                   backgroundColor: '#FFFFFF',
-                  padding: '14px',
+                  padding: '16px',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.06), 0px 1px 2px rgba(0, 0, 0, 0.04)',
-                  border: '1px solid rgba(0, 0, 0, 0.04)',
+                  boxShadow: '6px 6px 0px 0px rgba(0, 0, 0, 1)',
+                  border: '4px solid #000000',
                 }}
               >
                 <img
@@ -176,7 +184,13 @@ export async function GET(req: NextRequest) {
         fonts: [
           {
             name: 'Bebas Neue',
-            data: fontData,
+            data: bebasFontData,
+            style: 'normal',
+            weight: 400,
+          },
+          {
+            name: 'Spectral',
+            data: spectralFontData,
             style: 'normal',
             weight: 400,
           },

@@ -23,13 +23,12 @@ export function Features() {
         </div>
         
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 mt-16 lg:mt-20">
-          <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative z-10 flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-                <FileText className="h-7 w-7 text-primary" />
+          <div className="group relative rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border-4 border-black bg-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <FileText className="h-7 w-7 text-black" />
               </div>
-              <h3 className="font-display text-xl font-semibold tracking-tight text-foreground lg:text-2xl">
+              <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
                 Greenfield Scaffolding
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
@@ -37,14 +36,13 @@ export function Features() {
               </p>
             </div>
           </div>
-          
-          <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative z-10 flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-                <Code className="h-7 w-7 text-primary" />
+
+          <div className="group relative rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border-4 border-black bg-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <Code className="h-7 w-7 text-black" />
               </div>
-              <h3 className="font-display text-xl font-semibold tracking-tight text-foreground lg:text-2xl">
+              <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
                 Brownfield Support
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
@@ -52,14 +50,13 @@ export function Features() {
               </p>
             </div>
           </div>
-          
-          <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative z-10 flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-                <Zap className="h-7 w-7 text-primary" />
+
+          <div className="group relative rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border-4 border-black bg-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <Zap className="h-7 w-7 text-black" />
               </div>
-              <h3 className="font-display text-xl font-semibold tracking-tight text-foreground lg:text-2xl">
+              <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
                 Integration Development
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
@@ -67,14 +64,13 @@ export function Features() {
               </p>
             </div>
           </div>
-          
-          <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative z-10 flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 shadow-lg">
-                <Sparkles className="h-7 w-7 text-primary" />
+
+          <div className="group relative rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border-4 border-black bg-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <Sparkles className="h-7 w-7 text-black" />
               </div>
-              <h3 className="font-display text-xl font-semibold tracking-tight text-foreground lg:text-2xl">
+              <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
                 Product Roadmap
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">

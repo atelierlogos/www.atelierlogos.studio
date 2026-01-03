@@ -19,7 +19,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-inter)", "Georgia", "serif"],
+        serif: ["var(--font-spectral)", "Georgia", "serif"],
         display: ["var(--font-inter)", "Georgia", "serif"],
       },
       colors: {

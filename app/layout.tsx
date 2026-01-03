@@ -13,6 +13,33 @@ const bebasNeue = localFont({
   display: "swap"
 })
 
+const spectral = localFont({
+  src: [
+    {
+      path: "../public/fonts/Spectral-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Spectral-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Spectral-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Spectral-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-spectral",
+  display: "swap"
+})
+
 export const metadata: Metadata = {
   title: "Atelier Logos | Spec-driven Solutions" as const,
   description: "We use spec-driven development to build custom software solutions." as const,
@@ -65,7 +92,7 @@ export default function RootLayout({
   const description = metadata.description as string
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${bebasNeue.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${bebasNeue.variable} ${spectral.variable}`}>
       <head>
         <meta name="description" content={description} />
         <link rel="canonical" href="https://www.atelierlogos.studio" />

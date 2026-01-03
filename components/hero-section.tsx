@@ -151,7 +151,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 bg-white font-sans">
+    <section className="relative overflow-hidden py-24 md:py-32 bg-background font-sans">
       <div
         className="absolute inset-0 z-0 pointer-events-none bg-[length:32px_32px] opacity-60"
         style={{
@@ -161,16 +161,13 @@ export function HeroSection() {
       />
 
       <div className="container relative z-10 px-4 md:px-8 max-w-6xl mx-auto text-center space-y-10 md:space-y-12">
-        <div className="relative inline-flex overflow-hidden rounded-2xl border border-border/30 bg-white/95 px-4 py-2.5 text-[0.65rem] sm:text-xs md:text-sm text-foreground/75 font-medium italic shadow-lg shadow-black/5 font-serif backdrop-blur">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(147,197,253,0.25),transparent_60%)] opacity-70" />
-          <div className="relative z-10">
-            <span className="font-semibold text-foreground">Atelier</span> (atelier) – a workshop or studio where artists work. |{" "}
-            <span className="font-semibold text-foreground">Logos</span> (λόγος) – the act of speaking, discourse, or reasoned thought.
-          </div>
+        <div className="inline-flex rounded-xl border-4 border-black bg-white px-6 py-3 text-[0.65rem] sm:text-xs md:text-sm text-foreground font-bold italic shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-serif">
+          <span className="font-bold">Atelier</span> (atelier) – a workshop or studio where artists work. |{" "}
+          <span className="font-bold">Logos</span> (λόγος) – the act of speaking, discourse, or reasoned thought.
         </div>
 
         <h1 className="text-6xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-6xl mx-auto">
-        Specs + <CyclingLogo /> = Beautiful Software for Less 💵
+        Specs + <CyclingLogo /> = AI-Assisted Nirvana 🌌
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
@@ -180,7 +177,7 @@ export function HeroSection() {
         <div className="max-w-3xl mx-auto w-full">
           <form
             onSubmit={handleNewsletterSignup}
-            className="rounded-2xl border border-border/50 bg-white/80 p-5 shadow-xl shadow-muted-foreground/30 backdrop-blur-md"
+            className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
           >
             <div className="space-y-1 text-center">
               <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Stay in the loop</p>
@@ -201,18 +198,18 @@ export function HeroSection() {
                   setHasSignedUp(false)
                 }}
                 required
-                className="flex-1"
+                className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:translate-x-[2px] focus:translate-y-[2px] transition-all"
               />
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto sm:min-w-[160px]"
+                className="w-full sm:w-auto sm:min-w-[160px] bg-primary border-4 border-black text-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Joining…" : hasSignedUp ? "You're in!" : "Join the list"}
               </Button>
             </div>
             {hasSignedUp && (
-              <div className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-emerald-400/70 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
+              <div className="mt-3 flex items-center justify-center gap-2 rounded-lg border-4 border-black bg-emerald-400 px-3 py-2 text-xs font-bold text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                 <CheckCircle className="h-4 w-4" />
                 You're on the list—watch your inbox for updates.
               </div>
@@ -228,31 +225,33 @@ export function HeroSection() {
             </p>
           </div>
           <div className="flex justify-center">
-            <div
-              className="w-full max-w-4xl"
-              style={{
-                position: "relative",
-                paddingBottom: "calc(56.25% + 33px)",
-                height: 0,
-              }}
-            >
-              <iframe
-                src="https://demo.arcade.software/l3ClAIEprcx2X8eXBUGj?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-                title="Colony: The backoffice for modern vendor ops"
-                frameBorder="0"
-                loading="lazy"
-                allow="clipboard-write"
-                className="rounded-lg shadow-lg"
+            <div className="w-full max-w-4xl rounded-xl border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+              <div
+                className="w-full"
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  colorScheme: "light",
+                  position: "relative",
+                  paddingBottom: "calc(56.25% + 33px)",
+                  height: 0,
                 }}
-                allowFullScreen
-              ></iframe>
+              >
+                <iframe
+                  src="https://demo.arcade.software/l3ClAIEprcx2X8eXBUGj?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+                  title="Colony: The backoffice for modern vendor ops"
+                  frameBorder="0"
+                  loading="lazy"
+                  allow="clipboard-write"
+                  className="rounded-xl shadow-md"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    colorScheme: "light",
+                  }}
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

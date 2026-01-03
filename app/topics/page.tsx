@@ -32,10 +32,9 @@ export default async function TopicsIndexPage() {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 lg:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="container relative mx-auto max-w-5xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+            <div className="inline-flex items-center rounded-xl border-4 border-black bg-white px-6 py-2 text-sm font-bold text-foreground mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <BookOpen className="mr-2 h-4 w-4 flex-shrink-0" />
               <span>Knowledge Base</span>
             </div>
@@ -64,7 +63,7 @@ export default async function TopicsIndexPage() {
                 <Link
                   key={hub.slug}
                   href={hub.url}
-                  className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all"
+                  className="group flex flex-col overflow-hidden rounded-xl border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                 >
                   {/* Hub Header */}
                   <div className="p-6 md:p-8">
@@ -91,7 +90,7 @@ export default async function TopicsIndexPage() {
 
                     {/* Preview of Guides */}
                     {hub.guides.length > 0 && (
-                      <div className="border-t border-border pt-4">
+                      <div className="border-t-2 border-black pt-4">
                         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                           Topics Covered
                         </p>
@@ -117,7 +116,7 @@ export default async function TopicsIndexPage() {
                   </div>
 
                   {/* Hub Footer */}
-                  <div className="mt-auto border-t border-border bg-muted/30 px-6 md:px-8 py-4">
+                  <div className="mt-auto border-t-4 border-black bg-primary/10 px-6 md:px-8 py-4">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">
                         Comprehensive guide
@@ -145,49 +144,49 @@ export default async function TopicsIndexPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="rounded-lg border border-border bg-card p-6">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="h-10 w-10 rounded-lg border-4 border-black bg-primary flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <svg className="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2">Spec-Driven Development</h3>
+                <h3 className="font-bold mb-2">Spec-Driven Development</h3>
                 <p className="text-sm text-muted-foreground">
                   Write specifications first, generate implementation with LLM assistance, ship 3-4x faster.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border bg-card p-6">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="h-10 w-10 rounded-lg border-4 border-black bg-primary flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <svg className="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2">Compliance Engineering</h3>
+                <h3 className="font-bold mb-2">Compliance Engineering</h3>
                 <p className="text-sm text-muted-foreground">
                   Build regulatory requirements into your architecture from day one, pass audits first time.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border bg-card p-6">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="h-10 w-10 rounded-lg border-4 border-black bg-primary flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <svg className="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2">LLM Security</h3>
+                <h3 className="font-bold mb-2">LLM Security</h3>
                 <p className="text-sm text-muted-foreground">
                   Design and build LLM features to resist attacks and exploitation, not just be pretty feature addons.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border bg-card p-6">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="h-10 w-10 rounded-lg border-4 border-black bg-primary flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <svg className="h-5 w-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2">Strategic Tooling Selection</h3>
+                <h3 className="font-bold mb-2">Strategic Tooling Selection</h3>
                 <p className="text-sm text-muted-foreground">
                   Build sustainable technology stacks through systematic evaluation, vendor assessment, and long-term strategic alignment
                 </p>
@@ -197,7 +196,7 @@ export default async function TopicsIndexPage() {
 
           {/* CTA Section */}
           <section className="mt-16 md:mt-24">
-            <div className="rounded-xl border border-border bg-card p-8 md:p-12 text-center">
+            <div className="rounded-xl border-4 border-black bg-white p-8 md:p-12 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
                 Need Help Implementing These Concepts?
               </h2>
@@ -207,7 +206,7 @@ export default async function TopicsIndexPage() {
               </p>
               <Link
                 href="https://cal.com/team/atelierlogos/greenfield-retainer-intro"
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-black text-white px-8 text-sm font-medium shadow transition-colors hover:bg-black/90"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-primary border-4 border-black text-black px-8 text-sm font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
               >
                 Schedule a Consultation
               </Link>
