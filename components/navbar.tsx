@@ -54,7 +54,7 @@ export function Navbar() {
             Schedule a call
           </Button>
 
-          {session ? (
+          {/* {session ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon" className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
@@ -80,7 +80,7 @@ export function Navbar() {
             <Button variant="outline" asChild className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-bold">
               <Link href="/sign-in">Sign In</Link>
             </Button>
-          )}
+          )} */}
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
