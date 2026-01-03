@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Atelier Logos",
     images: [
       {
-        url: "/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5",
+        url: "https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5",
         width: 1200,
         height: 630,
         alt: "Atelier Logos - Spec-driven Solutions",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Atelier Logos | LLM Solutions Studio",
     description: "We use spec-driven development to build custom software solutions.",
-    images: ["/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5"]
+    images: ["https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5"]
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ export default function RootLayout({
         <title>{title}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://www.atelierlogos.studio/og-image.png" />
-        <meta property="og:image:width" content="2910" />
-        <meta property="og:image:height" content="1540" />
+        <meta property="og:image" content="https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
