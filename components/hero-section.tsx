@@ -167,11 +167,11 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-6xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-6xl mx-auto">
-        Specs + <CyclingLogo /> = AI-Assisted Nirvana 🌌
+        Specs + <CyclingLogo /> = Kill your vendors 🔪
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-          We build custom software solutions using spec-driven development to plan, map, and type your system to AI-assisted development tools before any work is started.
+          We build <b>internal</b> software solutions using spec-driven development to copy the functionality of your existing vendor SaaS while cutting your costs by up to <b>80%</b>.
         </p>
 
         <div className="max-w-3xl mx-auto w-full">
