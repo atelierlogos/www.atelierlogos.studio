@@ -1,4 +1,4 @@
-import { Code, FileText, Zap, Sparkles } from "lucide-react"
+import { Code, FileText, Zap, Sparkles, GlassesIcon, User2Icon } from "lucide-react"
 
 export function Features() {
   return (
@@ -26,13 +26,13 @@ export function Features() {
           <div className="group relative rounded-xl border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="flex h-14 w-14 items-center justify-center rounded-xl border-4 border-black bg-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <FileText className="h-7 w-7 text-black" />
+                <User2Icon className="h-7 w-7 text-black" />
               </div>
               <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
-                Greenfield Scaffolding
+                Agentic DevEx
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
-                Generate robust, spec-driven codebases for new projects to get started quickly
+                Plan the interaction flow between AI agents, your developers, and your software to maximize user experience and efficiency.
               </p>
             </div>
           </div>
@@ -43,10 +43,10 @@ export function Features() {
                 <Code className="h-7 w-7 text-black" />
               </div>
               <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
-                Brownfield Support
+                Demo Implementation
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
-                Help implement any features and fixes you need for launch or customer needs
+                Show the value of MCP to stakeholders with a working technical demo of core features and architecture.
               </p>
             </div>
           </div>
@@ -57,10 +57,10 @@ export function Features() {
                 <Zap className="h-7 w-7 text-black" />
               </div>
               <h3 className="font-display text-xl font-bold tracking-tight text-foreground lg:text-2xl">
-                Integration Development
+                MCP Support
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground lg:text-base">
-                Reduce implementation time from months to days with my hybrid AI × Human approach.
+                Leverage Model Context Protocol to connect your agents to external tools seamlessly.
               </p>
             </div>
           </div>

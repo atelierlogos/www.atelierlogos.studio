@@ -167,11 +167,11 @@ export function HeroSection() {
         </div>
 
         <h1 className="text-6xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.15] text-black max-w-6xl mx-auto">
-        Specs + <CyclingLogo /> = Kill your vendors 🔪
+         We provide winning <CyclingLogo /> engineering strategy
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed tracking-tight">
-          We build <b>internal</b> software solutions using spec-driven development to copy the functionality of your existing vendor SaaS while cutting your costs by up to <b>80%</b>.
+          We strategize and build <b>agentic</b> software solutions using spec-driven development and MCP-native architectures to empower businesses to leverage AI effectively and responsibly.
         </p>
 
         <div className="max-w-3xl mx-auto w-full">
@@ -181,7 +181,7 @@ export function HeroSection() {
           >
             <div className="space-y-1 text-center">
               <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Stay in the loop</p>
-              <h3 className="text-2xl font-semibold text-foreground">Hear about internal projects and customer builds</h3>
+              <h3 className="text-2xl font-semibold text-foreground">Hear about new content and updates</h3>
               <p className="text-muted-foreground">
                 We share thoughtful notes on our workflow, learnings, and launches about once a month.
               </p>
