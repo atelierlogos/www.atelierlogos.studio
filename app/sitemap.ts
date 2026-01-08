@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { getAllIndustryGuides } from '@/lib/industries'
-import { getAllWebinars } from '@/lib/webinar-db'
 import { getAllTopicHubs } from '@/lib/topic-hubs'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -89,15 +88,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
-  // Dynamic webinars
-  const webinars = await getAllWebinars()
-  const webinarPages: MetadataRoute.Sitemap = webinars.map((webinar) => ({
-    url: `${baseUrl}/webinars/${webinar.slug}`,
-    lastModified: new Date(webinar.scheduled_start),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
-
   // Topic hubs (pillar pages)
   const topicHubs = await getAllTopicHubs()
   const hubPages: MetadataRoute.Sitemap = topicHubs.map((hub) => ({
@@ -117,5 +107,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   )
 
-  return [...staticPages, ...blogPages, ...industryPages, ...webinarPages, ...hubPages, ...subpages]
+  return [...staticPages, ...blogPages, ...industryPages, ...hubPages, ...subpages]
 }
