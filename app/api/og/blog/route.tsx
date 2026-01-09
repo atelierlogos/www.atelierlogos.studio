@@ -57,23 +57,40 @@ export async function GET(req: NextRequest) {
               justifyContent: 'space-between',
               width: '50%',
               height: '100%',
-              padding: '80px 70px',
+              padding: '60px 50px',
               borderRight: '8px solid #000000',
               background: 'hsl(160, 50%, 97%)',
             }}
           >
-            {/* Logo */}
+            {/* Header */}
             <div
               style={{
                 display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
+                gap: '24px',
+                width: '100%',
               }}
             >
+              <p
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 700,
+                  margin: 0,
+                  textAlign: 'center',
+                  letterSpacing: '0.05em',
+                  color: '#374151',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Atelier Logos | Blog
+              </p>
+
+              {/* Logo */}
               <img
                 src={logoUrl}
-                width="200"
-                height="200"
+                width="160"
+                height="160"
                 style={{
                   objectFit: 'contain',
                   imageRendering: 'crisp-edges',
@@ -89,19 +106,19 @@ export async function GET(req: NextRequest) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: '100%',
-                gap: '20px',
+                gap: '16px',
               }}
             >
               <h1
                 style={{
-                  fontSize: '80px',
+                  fontSize: '58px',
                   fontWeight: 900,
                   margin: 0,
                   textAlign: 'center',
-                  lineHeight: 0.9,
+                  lineHeight: 0.95,
                   letterSpacing: '-0.02em',
                   color: '#000000',
-                  maxWidth: '90%',
+                  maxWidth: '95%',
                   textTransform: 'uppercase',
                 }}
               >
@@ -110,14 +127,14 @@ export async function GET(req: NextRequest) {
               {subtitle && (
                 <p
                   style={{
-                    fontSize: '26px',
+                    fontSize: '20px',
                     fontWeight: 600,
                     margin: 0,
                     textAlign: 'center',
                     lineHeight: 1.3,
                     color: '#374151',
                     letterSpacing: '0em',
-                    maxWidth: '90%',
+                    maxWidth: '95%',
                     fontFamily: '"Spectral", serif',
                   }}
                 >
@@ -127,7 +144,7 @@ export async function GET(req: NextRequest) {
             </div>
 
             {/* Bottom spacer for balance */}
-            <div style={{ height: '40px' }} />
+            <div style={{ height: '20px' }} />
           </div>
 
           {/* Right Side - Icons Grid */}
