@@ -5,6 +5,19 @@ import { join } from 'path';
 
 export const runtime = 'nodejs';
 
+const icons = [
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/openai.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/claude-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/mcp.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/gemini-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/replit-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/cloudflare-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/exa-color.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/manus.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/v0.png",
+  "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/vllm-color.png",
+];
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -30,38 +43,23 @@ export async function GET(req: NextRequest) {
             height: '100%',
             width: '100%',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            flexDirection: 'row',
             background: 'hsl(160, 50%, 97%)',
             fontFamily: '"Bebas Neue", sans-serif',
-            padding: '80px',
-            position: 'relative',
           }}
         >
-          {/* Background grid pattern */}
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)',
-              backgroundSize: '32px 32px',
-            }}
-          />
-
-          {/* Content container */}
+          {/* Left Side - Text and Logo */}
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
-              gap: '40px',
-              zIndex: 1,
-              maxWidth: '1000px',
+              justifyContent: 'space-between',
+              width: '50%',
+              height: '100%',
+              padding: '80px 70px',
+              borderRight: '8px solid #000000',
+              background: 'hsl(160, 50%, 97%)',
             }}
           >
             {/* Logo */}
@@ -70,17 +68,12 @@ export async function GET(req: NextRequest) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#FFFFFF',
-                borderRadius: '20px',
-                padding: '24px',
-                boxShadow: '8px 8px 0px 0px rgba(0, 0, 0, 1)',
-                border: '4px solid #000000',
               }}
             >
               <img
                 src={logoUrl}
-                width="120"
-                height="120"
+                width="200"
+                height="200"
                 style={{
                   objectFit: 'contain',
                   imageRendering: 'crisp-edges',
@@ -88,58 +81,100 @@ export async function GET(req: NextRequest) {
               />
             </div>
 
-            {/* Title */}
-            <h1
-              style={{
-                fontSize: '72px',
-                fontWeight: 900,
-                margin: 0,
-                textAlign: 'center',
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                color: '#000000',
-                maxWidth: '95%',
-                textTransform: 'uppercase',
-              }}
-            >
-              {title}
-            </h1>
-
-            {/* Subtitle */}
-            {subtitle && (
-              <p
-                style={{
-                  fontSize: '32px',
-                  fontWeight: 600,
-                  margin: 0,
-                  textAlign: 'center',
-                  lineHeight: 1.4,
-                  color: '#374151',
-                  letterSpacing: '0em',
-                  maxWidth: '90%',
-                  fontFamily: '"Spectral", serif',
-                }}
-              >
-                {subtitle}
-              </p>
-            )}
-
-            {/* Industry label */}
+            {/* Title and Subtitle */}
             <div
               style={{
                 display: 'flex',
-                fontSize: '20px',
-                fontWeight: 600,
-                padding: '12px 28px',
-                backgroundColor: '#000000',
-                color: '#FFFFFF',
-                borderRadius: '8px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                gap: '20px',
               }}
             >
-              Industry Guide
+              <h1
+                style={{
+                  fontSize: '80px',
+                  fontWeight: 900,
+                  margin: 0,
+                  textAlign: 'center',
+                  lineHeight: 0.9,
+                  letterSpacing: '-0.02em',
+                  color: '#000000',
+                  maxWidth: '90%',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {title}
+              </h1>
+              {subtitle && (
+                <p
+                  style={{
+                    fontSize: '26px',
+                    fontWeight: 600,
+                    margin: 0,
+                    textAlign: 'center',
+                    lineHeight: 1.3,
+                    color: '#374151',
+                    letterSpacing: '0em',
+                    maxWidth: '90%',
+                    fontFamily: '"Spectral", serif',
+                  }}
+                >
+                  {subtitle}
+                </p>
+              )}
             </div>
+
+            {/* Bottom spacer for balance */}
+            <div style={{ height: '40px' }} />
+          </div>
+
+          {/* Right Side - Icons Grid */}
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '18px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignContent: 'center',
+              width: '50%',
+              height: '100%',
+              padding: '80px 60px',
+              background: 'hsl(160, 50%, 97%)',
+              position: 'relative',
+              backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)',
+              backgroundSize: '32px 32px',
+            }}
+          >
+            {icons.map((icon, index) => (
+              <div
+                key={index}
+                style={{
+                  display: 'flex',
+                  width: '92px',
+                  height: '92px',
+                  borderRadius: '12px',
+                  backgroundColor: '#FFFFFF',
+                  padding: '16px',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '6px 6px 0px 0px rgba(0, 0, 0, 1)',
+                  border: '4px solid #000000',
+                }}
+              >
+                <img
+                  src={icon}
+                  width="60"
+                  height="60"
+                  style={{
+                    objectFit: 'contain',
+                    imageRendering: 'crisp-edges',
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </div>
       ),
