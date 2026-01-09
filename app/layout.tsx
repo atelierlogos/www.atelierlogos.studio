@@ -88,25 +88,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const title = metadata.title as string
-  const description = metadata.description as string
-
   return (
     <html lang="en" suppressHydrationWarning className={`${bebasNeue.variable} ${spectral.variable}`}>
       <head>
-        <meta name="description" content={description} />
-        <link rel="canonical" href="https://www.atelierlogos.studio" />
-        <title>{title}</title>
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.atelierlogos.studio" />
-
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -115,11 +99,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Atelier Logos" />
-
-
-
-
-
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://cdn.segment.com" />
       </head>
