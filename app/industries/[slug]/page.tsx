@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.atelierlogos.studio'
   const guideUrl = `${baseUrl}/industries/${params.slug}`
 
-  const ogImageUrl = `/api/og?title=${encodeURIComponent(guide.title)}&subtitle=${encodeURIComponent(guide.metaDescription)}`
+  const ogImageUrl = `/api/og/industries?title=${encodeURIComponent(guide.title)}&subtitle=${encodeURIComponent(guide.metaDescription)}`
 
   return {
     title: `${guide.title} | Atelier Logos`,

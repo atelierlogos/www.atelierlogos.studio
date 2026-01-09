@@ -32,10 +32,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.atelierlogos.studio'
   const postUrl = `${baseUrl}/blog/${params.slug}`
 
-  const ogImageUrl = `/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.summary)}`
+  const ogImageUrl = `/api/og/blog?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.summary)}`
 
   return {
-    title: `${post.title} | Atelier Logos Blog`,
+    title: `${post.title} | Atelier Logos`,
     description: post.summary,
     keywords: post.tags,
     authors: [{ name: post.author }],

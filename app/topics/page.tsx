@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Explore comprehensive guides on spec-driven development, compliance engineering, llm security, and strategic tool selection.',
   keywords: ['software development', 'compliance', 'security', 'infrastructure', 'DevOps', 'technical guides'],
   openGraph: {
-    images: ['/api/og?title=Topic%20Hubs&subtitle=Comprehensive%20guides%20for%20regulated%20industries'],
+    images: ['/api/og/topics?title=Topic%20Hubs&subtitle=Comprehensive%20guides%20for%20regulated%20industries'],
   },
 }
 

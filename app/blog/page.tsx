@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Insights on spec-driven development, LLM-assisted programming, and building compliant software for regulated industries.',
   keywords: ['blog', 'spec-driven development', 'LLM development', 'software engineering', 'compliance'],
   openGraph: {
-    images: ['/api/og?title=Blog&subtitle=Insights%20on%20spec-driven%20development'],
+    images: ['/api/og/blog?title=Blog&subtitle=Insights%20on%20spec-driven%20development'],
   },
 }
 

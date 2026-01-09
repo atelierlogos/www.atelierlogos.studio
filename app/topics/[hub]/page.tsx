@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: TopicHubPageProps): Promise<M
     description: hub.metaDescription,
     keywords: hub.keywords,
     openGraph: {
-      images: [`/api/og?title=${encodeURIComponent(hub.title)}&subtitle=${encodeURIComponent(hub.metaDescription)}`],
+      images: [`/api/og/topics?title=${encodeURIComponent(hub.title)}&subtitle=${encodeURIComponent(hub.metaDescription)}`],
     },
   }
 }
