@@ -33,7 +33,7 @@ export function Pricing() {
         </h2>
         <p className="text-muted-foreground max-w-2xl text-center">
           Pick the engagement model that matches your roadmap. Every plan includes deep specs,
-          async collaboration, and the ability to scale up or pause with notice.
+          async collaboration, and the ability to scale up or pause with notice. <a href="/blog" className="text-primary hover:underline font-semibold">Read about our process</a>.
         </p>
       </div>
 

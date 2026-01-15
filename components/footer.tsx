@@ -24,8 +24,17 @@ const footerLinkSections = [
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
+      { label: "Topic Hubs", href: "/topics" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Data Processing Agreement", href: "/dpa" },
+    ],
+  },
+  {
+    title: "Popular Guides",
+    links: [
+      { label: "LLM-Assisted Coding", href: "/guides/llm-assisted-coding" },
+      { label: "Writing Effective Specs", href: "/guides/writing-effective-specs" },
+      { label: "Compliance Mapping", href: "/guides/compliance-mapping" },
     ],
   },
 ]
@@ -34,8 +43,8 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2">
               <Image src="/logo.png" alt="Hermetic Labs Logo" width={32} height={32} className="dark:brightness-110" />
               <span className="text-lg font-bold">Atelier Logos</span>

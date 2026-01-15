@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { getAllIndustryGuides } from '@/lib/industries'
 import { getAllTopicHubs } from '@/lib/topic-hubs'
+import { getAllGuideSlugs } from '@/lib/guides'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.atelierlogos.studio'
@@ -107,5 +108,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   )
 
-  return [...staticPages, ...blogPages, ...industryPages, ...hubPages, ...subpages]
+  // All guides
+  const guideSlugs = getAllGuideSlugs()
+  const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...blogPages, ...industryPages, ...hubPages, ...subpages, ...guidePages]
 }

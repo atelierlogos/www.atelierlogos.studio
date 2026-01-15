@@ -2,6 +2,8 @@ import { getGuide, getRelatedGuides, getAllGuideSlugs } from '@/lib/guides'
 import { getTopicHub } from '@/lib/topic-hubs'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { RelatedContent } from '@/components/related-content'
+import { getRelatedContent } from '@/lib/related-content'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -28,7 +30,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
-  const guide = await getGuide(params.slug)
+  const { slug } = await params
+  const guide = await getGuide(slug)
 
   if (!guide) {
     return {
@@ -50,8 +53,9 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
 }
 
 export default async function GuidePage({ params }: GuidePageProps) {
-  const guide = await getGuide(params.slug)
-  const relatedGuides = await getRelatedGuides(params.slug)
+  const { slug } = await params
+  const guide = await getGuide(slug)
+  const relatedGuides = await getRelatedGuides(slug)
 
   if (!guide) {
     notFound()
@@ -149,10 +153,13 @@ export default async function GuidePage({ params }: GuidePageProps) {
             />
           </div>
 
+          {/* Related Content */}
+          <RelatedContent items={getRelatedContent(slug)} title="Continue Learning" />
+
           {/* Related Guides */}
           {relatedGuides.length > 0 && (
             <section className="border-t-4 border-black pt-8 md:pt-12 mb-12">
-              <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6">Related Guides</h2>
+              <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6">More from this Topic</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedGuides.map((related) => (
                   <Link

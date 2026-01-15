@@ -17,7 +17,7 @@ export function Features() {
               </span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
-              We specialize in building powerful and efficient software by taking advantage of the latest AI-assisted development tools and methodologies.
+              We specialize in building powerful and efficient software by taking advantage of the latest AI-assisted development tools and methodologies. <a href="/guides/llm-assisted-coding" className="text-primary hover:underline font-semibold">Learn our approach</a>.
             </p>
           </div>
         </div>

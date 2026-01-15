@@ -19,7 +19,7 @@ Instant profit right? Except that's not what happens. What happens is that you s
 
 ## How we do things differently
 
-Delusions of grandeur aside, the draw of LLM-assisted development is am alluring one, and we'd be lying if we told you it's all just smoke and mirrors. There are some pre-experienced developers (Like us), who are building some incredibly complicated software with the help of LLMs such as [Anthropic Claude](https://claude.ai) and [OpenAI Codex](https://openai.com/codex/). 
+Delusions of grandeur aside, the draw of [LLM-assisted development](/guides/llm-assisted-coding) is am alluring one, and we'd be lying if we told you it's all just smoke and mirrors. There are some pre-experienced developers (Like us), who are building some incredibly complicated software with the help of LLMs such as [Anthropic Claude](https://claude.ai) and [OpenAI Codex](https://openai.com/codex/). 
 
 So what sets these development ventures apart from "vibe-coders"? At the core, it's planning. We all know about the trusty dusty `agents.md` file. I'm sure every marketing and rev ops professional in the world thought they we're Einstien the first time they discovered what a system prompt was. Yeah I'm speaking to you `{anonymousId_123456}` 😉. The agents.md file is really really neat *headpats*, but I promise there's a reason you haven't been able to replace your 30+ third-party vendors with Microsoft Copilot in a day. It's because you haven't taken the time to do things like:
 
@@ -27,7 +27,7 @@ So what sets these development ventures apart from "vibe-coders"? At the core, i
 - Create a `types` folder
 - Build a general foundation before you vomit out something like "Build a NextJS app that functionality of Clay GTM tool"
 
-Having even a foundational understanding of type theory and why it's important can be the difference in a successful LLM-assisted greenfield project and a failed experiment. We don't like failed experiments so we're going to give you the step by step into how we build projects here at Atelier Logos. We don't use tools like [Github Spec-kit](https://github.com/github/spec-kit) ourselves, but it's a great resource regardless. 
+Having even a foundational understanding of type theory and why it's important can be the difference in a successful LLM-assisted greenfield project and a failed experiment. We don't like failed experiments so we're going to give you the step by step into how we build projects here at Atelier Logos. Learn more about [writing effective specifications](/guides/writing-effective-specs) to maximize your LLM development success. We don't use tools like [Github Spec-kit](https://github.com/github/spec-kit) ourselves, but it's a great resource regardless. 
 
 ### Define a initial data model
 
@@ -102,4 +102,10 @@ And from here, it's just a matter of mixing and balancing our own intuition with
 
 The ability to iterate and *iterate well* with LLM-assisted software development is exponentially greater when you have a defined set of criteria, and you leave as little for the LLM to guess on as possible, while also allowing the agent to take advantage of types via the LSP to automatically fix structural issues. 
 
-If you'd like us to explore how we can use this approach to help you develop internal tools for your organization, [schedule a time to chat with James](https://cal.com/team/atelierlogos/greenfield-retainer-intro) today. 
+If you'd like us to explore how we can use this approach to help you develop internal tools for your organization, [schedule a time to chat with James](https://cal.com/team/atelierlogos/greenfield-retainer-intro) today.
+
+## Related Resources
+
+- [Enterprise LLM-Assisted Development Guide](/guides/llm-assisted-coding) - Deep dive into strategic LLM implementation
+- [Writing Effective Specifications](/guides/writing-effective-specs) - Master the art of spec-driven development
+- [Explore All Topic Hubs](/topics) - Comprehensive guides on software development best practices 

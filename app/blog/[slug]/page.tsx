@@ -3,6 +3,8 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ShareButtons } from '@/components/share-buttons'
 import { ShareWidget } from '@/components/share-widget'
+import { RelatedContent } from '@/components/related-content'
+import { getRelatedContent } from '@/lib/related-content'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 
@@ -187,6 +189,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               first:prose-p:text-xl first:prose-p:font-medium first:prose-p:text-foreground first:prose-p:leading-relaxed"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* Related Content */}
+          <RelatedContent items={getRelatedContent(params.slug)} title="Related Articles & Guides" />
           
           {/* Share buttons section - hidden on mobile */}
           <div className="mt-12 lg:mt-16 pt-8 border-t border-border hidden sm:block">
