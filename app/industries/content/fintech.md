@@ -22,7 +22,7 @@ keywords:
   - "type-safe finance"
 relatedIndustries:
   - "healthtech"
-  - "insurtech"
+  - "govtech"
 
 overview: |
   Financial technology operates under a constraint that doesn't exist in most software: a single bug isn't merely an inconvenience or a poor user experience—it's potentially catastrophic. Financial losses can trigger regulatory penalties reaching millions of dollars. Compromised customer data destroys trust overnight. The Silicon Valley mantra of "move fast and break things" doesn't just fail in financial services—it can end your company before you reach product-market fit.
