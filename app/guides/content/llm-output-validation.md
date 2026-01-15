@@ -350,4 +350,4 @@ class ValidationMetrics {
 
 - [Prompt Injection Defense Strategies](prompt-injection-defense)
 - [Data Privacy in LLM Applications](data-privacy-llm)
-- [Enterprise AI Governance](ai-governance)
+- [Top LLM Security Tools](top-llm-security-tools)

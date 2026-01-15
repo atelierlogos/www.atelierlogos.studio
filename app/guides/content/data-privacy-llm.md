@@ -608,4 +608,4 @@ Security teams confident deploying AI agents with external tool access. Business
 
 - [Prompt Injection Defense](prompt-injection-defense)
 - [LLM Output Validation](llm-output-validation)
-- [API Security Best Practices](api-security)
+- [Top LLM Security Tools](top-llm-security-tools)

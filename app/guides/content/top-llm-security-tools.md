@@ -705,7 +705,7 @@ define flow
 
 ### Policy Enforcement
 - [Policy-as-Code for AI: OPA, Cedar, and Rego Comparison](/guides/top-policy-enforcement-libraries)
-- [AI Governance Frameworks: Implementing Responsible AI](/guides/ai-governance-frameworks)
+- [Compliance Mapping](/guides/compliance-mapping)
 
 ### Tool Documentation
 - [Lakera Guard Documentation](https://platform.lakera.ai/docs)

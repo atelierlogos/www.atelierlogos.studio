@@ -593,4 +593,4 @@ This isn't theoretical productivity improvement—it's measurable, repeatable tr
 
 - [Master writing effective specifications](writing-effective-specs) for optimal LLM output
 - [Map compliance requirements to specifications](compliance-mapping) for audit readiness
-- [Implement specification-driven code review processes](code-review-process)
+- [Explore spec-driven development](/topics/spec-driven-development)

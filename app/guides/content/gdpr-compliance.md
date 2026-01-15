@@ -893,6 +893,6 @@ Single implementation effort, multiple compliance certifications.
 
 ## Continue Learning
 
-- [MCP Security](mcp-security)
+- [Data Privacy with LLMs](data-privacy-llm)
 - [SOC 2 Implementation](soc2-implementation)
-- [Security Controls Framework](security-controls)
+- [Compliance Mapping](compliance-mapping)

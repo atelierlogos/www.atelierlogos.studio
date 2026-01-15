@@ -1146,13 +1146,13 @@ kubectl rollout undo deployment/llm-gateway -n production
 
 ### AI Governance & Policy
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [Responsible AI Practices](/guides/responsible-ai-practices)
-- [AI Governance Frameworks](/guides/ai-governance-frameworks)
+- [Compliance Mapping](/guides/compliance-mapping)
+- [Data Privacy with LLMs](/guides/data-privacy-llm)
 
 ### Authorization Patterns
 - [Zanzibar: Google's Consistent, Global Authorization System](https://research.google/pubs/pub48190/)
 - [Authorization Academy by OSO](https://www.osohq.com/academy)
-- [RBAC vs ABAC vs ReBAC: Comparison](/guides/authorization-models)
+- [Top Policy Enforcement Libraries](/guides/top-policy-enforcement-libraries)
 
 ### LLM Security
 - [Top LLM Security Tools Comparison](/guides/top-llm-security-tools)

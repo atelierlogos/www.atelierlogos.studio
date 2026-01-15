@@ -158,10 +158,10 @@ No platform is universally “best.” The right choice depends on regulatory sc
 - **NIST CSF**: [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 
 ### Compliance Strategy
-- [Compliance as Code: Automating GRC](/guides/compliance-as-code)
-- [Security Frameworks Comparison: SOC 2 vs ISO 27001 vs HIPAA](/guides/security-frameworks-comparison)
-- [Continuous Compliance: From Annual Audits to Real-Time Monitoring](/guides/continuous-compliance)
-- [Building a Security Program from Scratch](/guides/building-security-program)
+- [Compliance Mapping Guide](/guides/compliance-mapping)
+- [SOC 2 Implementation](/guides/soc2-implementation)
+- [HIPAA Implementation](/guides/hipaa-implementation)
+- [GDPR Compliance](/guides/gdpr-compliance)
 
 ### Tool-Specific Resources
 - [Vanta Documentation](https://www.vanta.com/resources)

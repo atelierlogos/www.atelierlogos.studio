@@ -832,7 +832,7 @@ test('should deny unauthorized access', async () => {
 **Core Compliance Engineering**:
 - [Write effective specifications with embedded compliance](writing-effective-specs)
 - [Implement LLM-assisted development with compliance awareness](llm-assisted-coding)
-- [Build comprehensive compliance engineering programs](compliance-engineering)
+- [Explore compliance engineering topics](/topics/compliance-engineering)
 
 **Policy-as-Code Resources**:
 - AWS Cedar: [cedarpolicy.com](https://www.cedarpolicy.com) - Open-source authorization policy language

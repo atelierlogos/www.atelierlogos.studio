@@ -555,4 +555,4 @@ This isn't documentation overhead—it's engineered velocity through comprehensi
 
 - [Implement LLM-assisted development with comprehensive specs](llm-assisted-coding)
 - [Map specifications to compliance frameworks](compliance-mapping)
-- [Build specification-driven test strategies](testing-strategies)
+- [Explore spec-driven development](/topics/spec-driven-development)

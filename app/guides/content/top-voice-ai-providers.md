@@ -473,9 +473,9 @@ Organizations with machine learning expertise should consider self-hosted Whispe
 - [Azure Speech Services Documentation](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/)
 
 ### Conversational AI
-- [Building Real-Time Voice AI Applications](/guides/building-voice-ai-apps)
-- [Voice AI for Customer Service: Best Practices](/guides/voice-ai-customer-service)
-- [Optimizing Voice AI Latency](/guides/optimizing-voice-latency)
+- [Top Voice AI Providers Comparison](/guides/top-voice-ai-providers)
+- [LLM-Assisted Development](/guides/llm-assisted-coding)
+- [Data Privacy with LLMs](/guides/data-privacy-llm)
 
 ### Related Tools & Technologies
 - [Top LLM Security Tools](/guides/top-llm-security-tools)
