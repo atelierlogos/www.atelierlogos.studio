@@ -1,5 +1,11 @@
 import Link from "next/link"
 import { Spectral } from "next/font/google"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Data Processing Agreement | Atelier Logos',
+  description: 'Our commitment to treat your data with the same legal care as we do our own. Learn about our data processing practices, security measures, and GDPR compliance.',
+}
 
 const spectral = Spectral({
   subsets: ["latin"],

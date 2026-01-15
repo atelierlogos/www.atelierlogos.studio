@@ -2,6 +2,12 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Startup Solutions | Atelier Logos',
+  description: 'Launch faster with a spec-driven product studio. From MVP to Series B, we help startups ship production-ready code with modern ops and premium design.',
+}
 
 const growthSignals = [
   {

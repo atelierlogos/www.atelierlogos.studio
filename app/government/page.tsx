@@ -2,6 +2,12 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Government Solutions | Atelier Logos',
+  description: 'Modern digital services for mission-driven government teams. FedRAMP-compliant solutions with spec-driven development for federal, state, and local agencies.',
+}
 
 const focusAreas = [
   {

@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { PricingCards } from "@/components/pricing-cards"
 import { ServiceIcon } from "@/components/service-icons"
 
+// Note: metadata export not supported in client components
+// Title is set via document.title in useEffect or via parent layout
+
 const retainerBenefits = [
   {
     title: "Dedicated triage",
