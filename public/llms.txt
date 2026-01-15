@@ -109,7 +109,7 @@ Cedar-policy powered authorization service for CUI-sensitive infrastructure with
 - GDPR Compliance: https://www.atelierlogos.studio/guides/gdpr-compliance
 - HIPAA Implementation: https://www.atelierlogos.studio/guides/hipaa-implementation
 - SOC 2 Implementation: https://www.atelierlogos.studio/guides/soc2-implementation
-- Topic Hub: https://www.atelierlogos.studio/topics/compliance-engineering
+- Topic Hub: https://www.atelierlogos.studio/topics/compliance
 
 **LLM Security**
 - Prompt Injection Defense: https://www.atelierlogos.studio/guides/prompt-injection-defense
