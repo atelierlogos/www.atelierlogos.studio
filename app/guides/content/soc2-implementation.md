@@ -13,7 +13,7 @@ keywords:
   - compliance automation
 relatedConcepts:
   - hipaa-implementation
-  - gdpr-compliance
+  - cmmc-ai-compliance
   - compliance-mapping
 ---
 
@@ -309,5 +309,5 @@ class ContinuousSOC2Compliance {
 ## Continue Learning
 
 - [HIPAA Implementation Guide](hipaa-implementation)
-- [GDPR Compliance for Software](gdpr-compliance)
+- [CMMC & FedRAMP Compliance](cmmc-ai-compliance)
 - [Compliance Mapping Methodology](compliance-mapping)

@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
     icon: Building2,
     hasDropdown: true,
     dropdownItems: [
+      { label: "SaaS", href: "/industries/saas" },
       { label: "FinTech", href: "/industries/fintech" },
       { label: "HealthTech", href: "/industries/healthtech" },
       { label: "GovTech", href: "/industries/govtech" },

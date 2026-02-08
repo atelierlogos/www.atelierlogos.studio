@@ -59,9 +59,9 @@ export const relatedContentMap: Record<string, Array<{
       type: "guide"
     },
     {
-      title: "GDPR Compliance",
-      description: "Comprehensive guide to GDPR compliance in software development",
-      href: "/guides/gdpr-compliance",
+      title: "CMMC & FedRAMP Compliance",
+      description: "AI-enabled compliance automation with MCP and Paramify",
+      href: "/guides/cmmc-ai-compliance",
       type: "guide"
     },
     {
@@ -77,18 +77,30 @@ export const relatedContentMap: Record<string, Array<{
       type: "guide"
     }
   ],
-  "gdpr-compliance": [
+  "cmmc-ai-compliance": [
     {
-      title: "Data Privacy with LLMs",
-      description: "Protecting user data when using large language models",
-      href: "/guides/data-privacy-llm",
+      title: "Compliance Mapping",
+      description: "Map CMMC and FedRAMP requirements to technical specifications",
+      href: "/guides/compliance-mapping",
       type: "guide"
     },
     {
-      title: "Compliance Mapping",
-      description: "Map GDPR requirements to technical specifications",
-      href: "/guides/compliance-mapping",
+      title: "SOC 2 Implementation",
+      description: "Complementary SOC 2 compliance for defense contractors",
+      href: "/guides/soc2-implementation",
       type: "guide"
+    },
+    {
+      title: "Model Context Protocol Hub",
+      description: "Learn more about MCP for agentic AI workflows",
+      href: "/topics/mcp",
+      type: "topic"
+    },
+    {
+      title: "Compliance Engineering Hub",
+      description: "Comprehensive compliance engineering resources",
+      href: "/topics/compliance",
+      type: "topic"
     }
   ],
   "hipaa-implementation": [
@@ -99,9 +111,9 @@ export const relatedContentMap: Record<string, Array<{
       type: "guide"
     },
     {
-      title: "Data Privacy with LLMs",
-      description: "Protecting PHI when using AI/ML systems",
-      href: "/guides/data-privacy-llm",
+      title: "SOC 2 Implementation",
+      description: "Complementary SOC 2 compliance for healthcare organizations",
+      href: "/guides/soc2-implementation",
       type: "guide"
     }
   ],
@@ -119,71 +131,17 @@ export const relatedContentMap: Record<string, Array<{
       type: "guide"
     }
   ],
-  "prompt-injection-defense": [
-    {
-      title: "LLM Output Validation",
-      description: "Validate and sanitize LLM outputs for security",
-      href: "/guides/llm-output-validation",
-      type: "guide"
-    },
-    {
-      title: "Top LLM Security Tools",
-      description: "Essential tools for securing LLM applications",
-      href: "/guides/top-llm-security-tools",
-      type: "guide"
-    },
-    {
-      title: "Data Privacy with LLMs",
-      description: "Protecting sensitive data in LLM applications",
-      href: "/guides/data-privacy-llm",
-      type: "guide"
-    }
-  ],
-  "llm-output-validation": [
-    {
-      title: "Prompt Injection Defense",
-      description: "Protect your LLM applications from prompt injection attacks",
-      href: "/guides/prompt-injection-defense",
-      type: "guide"
-    },
-    {
-      title: "Top LLM Security Tools",
-      description: "Essential security tools for LLM development",
-      href: "/guides/top-llm-security-tools",
-      type: "guide"
-    }
-  ],
-  "data-privacy-llm": [
-    {
-      title: "GDPR Compliance",
-      description: "Ensure GDPR compliance in your LLM applications",
-      href: "/guides/gdpr-compliance",
-      type: "guide"
-    },
-    {
-      title: "HIPAA Implementation",
-      description: "Build HIPAA-compliant LLM features",
-      href: "/guides/hipaa-implementation",
-      type: "guide"
-    },
-    {
-      title: "Prompt Injection Defense",
-      description: "Prevent data leakage through prompt injection",
-      href: "/guides/prompt-injection-defense",
-      type: "guide"
-    }
-  ],
   "top-llm-security-tools": [
     {
-      title: "Prompt Injection Defense",
-      description: "Strategies for defending against prompt injection",
-      href: "/guides/prompt-injection-defense",
+      title: "Top Policy Enforcement Libraries",
+      description: "Policy-as-code tools for securing AI applications",
+      href: "/guides/top-policy-enforcement-libraries",
       type: "guide"
     },
     {
-      title: "LLM Output Validation",
-      description: "Validate LLM outputs for security and correctness",
-      href: "/guides/llm-output-validation",
+      title: "Compliance Mapping",
+      description: "Map security requirements to implementations",
+      href: "/guides/compliance-mapping",
       type: "guide"
     }
   ],

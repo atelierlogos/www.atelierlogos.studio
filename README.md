@@ -4,7 +4,7 @@
 
 > *Atelier (ατελιέ) - A workshop or studio where artists work. | Logos (Λόγος) - The act of speaking, discourse, or argument.*
 
-**A Bespoke LLM-enabled Solutions Studio**
+**An LLM-enabled Solutions Studio**
 
 We are a bespoke software studio helping clients build scalable, testable, and beautiful software while adopting LLMs in a sane manner.
 
@@ -12,13 +12,12 @@ We are a bespoke software studio helping clients build scalable, testable, and b
 
 - **Modern Tech Stack**: Built with Next.js 15, React 19, and TypeScript
 - **Beautiful UI**: Powered by Radix UI and Tailwind CSS
-- **Authentication**: Secure user authentication with Supabase
-- **Real-time Features**: Pusher integration for live updates
+- **Authentication**: Secure auth with Supabase
 - **Payment Processing**: Stripe integration for seamless transactions
 - **Blog System**: Built-in blog with markdown support
 - **User Profiles**: Complete user management system
 - **Responsive Design**: Mobile-first approach with modern design principles
-- **PWA Ready**: Progressive Web App capabilities with service worker
+- **PWA Ready**: PWA capabilities with service worker
 
 ## 🛠️ Tech Stack
 
@@ -35,7 +34,7 @@ We are a bespoke software studio helping clients build scalable, testable, and b
 - **Authentication**: Supabase Auth
 - **Payments**: Stripe
 - **Real-time**: Pusher
-- **Push Notifications**: Pusher Push Notifications
+- **Push**: Pusher Push Notifications
 
 ### Development Tools
 - **Linting**: ESLint
@@ -137,7 +136,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - `bun start` - Start production server
 - `bun lint` - Run ESLint
 
-## 🔧 Environment Variables
+## 🔧 Variables
 
 Create a `.env.local` file with the following variables:
 

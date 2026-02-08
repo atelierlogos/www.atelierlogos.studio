@@ -18,9 +18,9 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-spectral)", "Georgia", "serif"],
-        display: ["var(--font-inter)", "Georgia", "serif"],
+        sans: ["var(--font-roboto)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,6 +65,13 @@ const config: Config = {
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 6s ease-in-out infinite",
+        "marquee": "marquee 25s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       backdropBlur: {
         xs: "2px",

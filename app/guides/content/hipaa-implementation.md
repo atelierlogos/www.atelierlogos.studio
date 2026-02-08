@@ -13,8 +13,8 @@ keywords:
   - medical data security
 relatedConcepts:
   - soc2-implementation
-  - gdpr-compliance
-  - data-privacy-llm
+  - compliance-mapping
+  - cmmc-ai-compliance
 ---
 
 HIPAA violations trigger penalties up to $50,000 per record, mandatory breach notifications costing $400+ per affected individual, and OCR audits consuming months of senior leadership time. Healthcare organizations and their business associates must implement comprehensive technical, administrative, and physical safeguards—not security theater, but engineered protection.
@@ -206,5 +206,5 @@ class BreachResponseSystem {
 ## Continue Learning
 
 - [SOC 2 Implementation](soc2-implementation)
-- [Data Privacy in LLM Applications](data-privacy-llm)
-- [Compliance Automation](compliance-mapping)
+- [CMMC & FedRAMP Compliance](cmmc-ai-compliance)
+- [Compliance Mapping Methodology](compliance-mapping)

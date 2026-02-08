@@ -46,8 +46,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Hermetic Labs Logo" width={32} height={32} className="dark:brightness-110" />
-              <span className="text-lg font-bold">Atelier Logos</span>
+              <Image src="/logo.png" alt="Stereos Logo" width={60} height={60} className="dark:brightness-110" />
+              <span className="text-lg font-bold">Stereos</span>
             </div>
             <p className="text-sm text-muted-foreground">
             LLM Solutions Studio

@@ -5,7 +5,7 @@ published: "2025-12-26"
 image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&h=900&fit=crop"
 topic: "tools"
 keywords: ["LLM security", "AI security tools", "prompt injection", "output validation", "PII detection", "Lakera Guard", "Robust Intelligence", "Arthur AI", "WhyLabs", "Protect AI", "HiddenLayer"]
-relatedConcepts: ["ai-security", "prompt-engineering", "model-security", "ai-governance", "responsible-ai", "mlops-security"]
+relatedConcepts: ["compliance-mapping", "soc2-implementation", "top-policy-enforcement-libraries"]
 ---
 
 As organizations deploy Large Language Models (LLMs) in production, new security challenges emerge that traditional application security tools weren't designed to address. Prompt injection attacks, toxic output, PII leakage, and model behavior drift require specialized security controls.

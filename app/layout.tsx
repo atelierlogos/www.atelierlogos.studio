@@ -1,64 +1,43 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import localFont from "next/font/local"
+import { Playfair_Display, Roboto } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AnalyticsProvider } from "@/components/analytics-provider"
 import { Toaster } from "@/components/ui/toaster"
 
-const bebasNeue = localFont({
-  src: "../public/fonts/BebasNeue-Regular.ttf",
-  variable: "--font-bebas-neue",
-  display: "swap"
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
 })
 
-const spectral = localFont({
-  src: [
-    {
-      path: "../public/fonts/Spectral-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Spectral-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Spectral-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Spectral-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-spectral",
-  display: "swap"
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Atelier Logos | Spec-driven Solutions" as const,
-  description: "We use spec-driven development to build custom software solutions." as const,
+  title: "Stereos | git-blame for LLM-driven teams ",
+  description: "Org-wide LLM usage attribution and change management",
   generator: 'v0.dev',
-
-  keywords: ['LLM', 'AI', 'Software Development', 'Bespoke Solutions', 'Machine Learning'],
-  authors: [{ name: 'Atelier Logos' }],
-  creator: 'Atelier Logos',
+  keywords: ['change management', 'attribution', 'developer enablement', 'process management', 'observability', 'analytics', 'LLMs', 'AI'],
+  authors: [{ name: 'Stereos' }],
+  creator: 'Stereos',
   openGraph: {
-    title: "Atelier Logos | Spec-driven Solutions",
-    description: "We use spec-driven development to build custom software solutions",
-    url: "https://www.atelierlogos.studio",
-    siteName: "Atelier Logos",
+    title: "Stereos | git-blame for LLM-driven teams",
+    description: "Org-wide LLM usage attribution and change management",
+    url: "https://www.trystereos.com",
+    siteName: "Stereos",
     images: [
       {
-        url: "https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5",
+        url: "https://www.trystereos.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atelier Logos - Spec-driven Solutions",
+        alt: "Stereos - git-blame for LLM-driven teams",
       }
     ],
     locale: "en_US",
@@ -66,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Atelier Logos | LLM Solutions Studio",
-    description: "We use spec-driven development to build custom software solutions.",
-    images: ["https://www.atelierlogos.studio/api/og?title=Atelier%20Logos&subtitle=Beautiful%20Software%20for%20Less%20%F0%9F%92%B5"]
+    title: "Stereos | git-blame for LLM-driven teams",
+    description: "Org-wide LLM usage attribution and change management",
+    images: ["https://www.trystereos.com/og-image.png"]
   },
   robots: {
     index: true,
@@ -89,20 +68,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${bebasNeue.variable} ${spectral.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfairDisplay.variable} ${roboto.variable}`}>
       <head>
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Atelier Logos" />
+        <meta name="apple-mobile-web-app-title" content="Stereos" />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://cdn.segment.com" />
       </head>
-      <body className={`${bebasNeue.className} antialiased min-h-screen bg-gradient-to-br from-background to-background/95 text-foreground selection:bg-black selection:text-white`}> 
+      <body className={`${roboto.className} antialiased min-h-screen bg-background text-foreground selection:bg-black selection:text-white`}> 
         <Script
           id="posthog"
           strategy="afterInteractive"

@@ -37,9 +37,9 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b-4 border-black bg-background shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Atelier Logos Logo" width={40} height={40} className="dark:brightness-110" />
-            <span className="text-xl font-bold">Atelier Logos</span>
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.png" alt="Stereos Logo " width={90} height={90} className="dark:brightness-110" />
+            <span className="text-xl font-bold">Stereos</span>
           </Link>
         </div>
 
